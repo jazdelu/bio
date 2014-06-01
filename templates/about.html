@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset= "utf-8">
+	<meta name="author" content="Bio In-Bev & Jaz">
+	<meta name="description" content = "Bio In-Bev is the first French company developing a full range of Organic and Fair trade beverages that allows Healthy & Eco-conscious people living in China to drink a premium and first quality beverage">
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/bio/css/bio.css">
+	<link rel="stylesheet" type="text/css" href="/static/vegas/jquery.vegas.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/fontello/fontello.css">
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-3 left">
+			<header>
+				<a href="#" title="Go to home">
+					<img class="logo" src="/static/bio/images/logo.jpg" class="logo">
+				</a>
+			</header>
+			<nav>
+				<ul class="main-nav">
+					<li><a href="/">HOME</a></li>
+					<li><a href="/consumption/">ORGANIC CONSUMPTION</a></li>
+					<li><a href="#" class="products">OUR PRODUCTS</a>
+					</li>
+					<li><a href="#">ABOUT US</a></li>
+					<li><a href="#">MISSIONS & VALUES</a></li>
+					<li><a href="#">OUR PARTNERS</a></li>
+					<li><a href="#">PRESS REVIEW</a></li>
+					<li><a href="#">EVENTS</a></li>
+				</ul>
+			</nav>
+			<footer>
+				<ul class="social">
+					<li><a href="#" class="icon-social-sina-weibo"></a></li>
+					<li><a href="#" class="icon-social-facebook"></a></li>
+					<li><a href="#" class="icon-social-instagram"></a></li>
+				</ul>
+				<p class="copyright">Copyright &copy; Bio In-Bev 2014 .<br/> All Rights Reserved</p>
+			</footer>
+		</div>
+		<div class="sub-nav-holder">
+			<nav>
+				<ul class="sub-nav">
+					<li><a href="/brand/"> FAIR </a></li>
+					<li><a href="#"> MENEAU </a></li>
+					<li><a href="#"> MELUSINE </a></li>
+					<li><a href="#"> BIO IN WINE </a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="fleche"></div>
+
+		<div class="col-md-9 right1">
+			<div class="front1">
+				The Profile
+			</div>
+			<div class="sfront1">
+				Unique. Urban. Organic.
+			</div>
+			<div class="fix-picture">
+				<img src="/static/bio/images/about.jpg">
+			</div>
+			<div class="section1">
+				<div class="title">
+					About Us
+				</div>
+				<div class="content">
+Bio In-Bev is the first French company developing a full range of Organic and Fair trade beverages.<br />
+
+Our mission is to offer a range of the highest quality beverages at the most competitive prices possible, ensuring to people living in China safe and healthy premium* products with genuine taste and aroma.<br />
+ 
+Bio In-Bev is striving to offer consumers better quality beverages from people who make the beverages better by strictly selecting every supplier in France.<br />
+
+If it’s Eco-friendly for the Earth and the farmer, it’s also Eco-friendly for the consumer.<br />
+  
+Our commitment is to deliver safe and qualitative products as well as offering relevant range that make a real different to our customers, consumers and stakeholders from France to China. <br />
+
+We believe the best way for us to do this, is through deep mind awareness on sustainability while having passion for what we do. <br />
+
+ *<i>Premium products differentiate themselves with ingredients and craftsmanship</i>
+
+				</div>
+			</div>
+			<div class="section1">
+				<div class="title">
+					Our Philosophy
+				</div>
+				<div class="content">
+Founded in early 2014, Bio In-Bev is a spin-off of Shanghai Wangdu Trade, French Wine Wholesaler in China. <br/>
+ 
+Lionel and Julie, the two founders, developed a simple concept full of common sense:<br/>
+
+We have French products here. A bit strew in several companies. <br/>
+
+But, do we have a reference French company; imported only a range of organic and safe products? And, how to verify if it's certified organic?<br/>
+
+The concept of Bio In-Bev was born. <br/>
+
+We created the first French company offering a full range of French Organic and Fair trade beverages that enables Healthy & Eco-conscious people in China to drink tastier and safer! <br/>
+
+Few months, many tastings, two trips in France later among campaigns, vineyards, offices, across Paris, Cognac, Bordeaux, Languedoc, Lyon, Rhone Valley and Burgundy, Bio In-Bev is glad to introduce you today the best of the French Authentic and Innovative beverages... in a total transparency. (you could check our products certificate in every product page) 
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<script type="text/javascript" src="/static/bio/js/jquery.js"></script>
+<script src="/static/bio/js/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="/static/vegas/jquery.vegas.min.js">
+</script>
+<script type="text/javascript">
+	$(function(){
+		timeout = ""
+		$(".sub-nav-holder, .fleche").hide();
+		$(".products").mouseover(function(){
+			$(".sub-nav-holder, .fleche").show('slide', {direction: 'left'}, 300);
+		}).mouseleave(function(){
+			timeout  = setTimeout(function(){$(".sub-nav-holder, .fleche").hide('slide', {direction: 'left'}, 300);},500);
+		});
+		$(".sub-nav-holder, .fleche").mouseover(function(){
+			clearTimeout(timeout);
+		}).mouseleave(function(){
+			setTimeout(function(){$(".sub-nav-holder, .fleche").hide('slide', {direction: 'left'}, 300);},500);
+		});
+	});
+</script>
+</body>
+</html>

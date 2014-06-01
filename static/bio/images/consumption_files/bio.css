@@ -1,0 +1,251 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	width: 100%;
+	height: 100%;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*------------Font---------------*/
+@font-face {
+  font-family: 'Caviar Dreams';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Caviar Dream'), local('Caviar Dream'),url(../../caviar/CaviarDreams.woff) format('woff'),url(../../caviar/CaviarDreams.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Caviar Dreams';
+  font-style: bold;
+  font-weight: 700;
+  src: local('CaviarDreamBold'), local('CaviarDreamBold'),url(../../caviar/CaviarDreamsBold.woff) format('woff'),url(../../caviar/CaviarDreamsBold.ttf) format('truetype');
+}
+
+/*----------Global Setting-----------*/
+h1, h2, h3, h4, h5, h6, a, p,div,li,span{
+	font-family: "Caviar Dreams",Arial,"Helvetica Nene",SimHei;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight: bold;
+}
+
+h1{
+	font-size: 48px;
+}
+h2{
+	font-size: 36px;
+}
+h3{
+	font-size: 30px;
+}
+a{
+	-o-transition:color .3s ease-out, background .3s ease-in;
+	-ms-transition:color .3s ease-out, background .3s ease-in;
+	-moz-transition:color .3s ease-out, background .3s ease-in;
+	-webkit-transition:color .3s ease-out, background .3s ease-in;
+  /* ...and now override with proper CSS property */
+	transition:color .3s ease-out, background .3s ease-in;
+
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+p{
+	line-height: 26px;
+	font-size: 16px;
+}
+/*--------structure----------*/
+.container{
+	width: 100%;
+	height: 100%;
+	padding-left: 0;
+	padding-right:0;
+}
+.left{
+	background-color:#fff; 
+	position: fixed;
+	width: 350px;
+	height: 100%;
+	padding-top: 50px;
+	-webkit-box-shadow:10px 10px 5px rgba(0,0,0,0.1);
+	box-shadow:10px 10px 5px rgba(0,0,0,0.4);
+
+}
+
+/*---------logo---------*/
+
+.logo{
+	display: block;
+	margin: 0 auto;
+}
+
+
+/*---------main-nav-----------*/
+.main-nav{
+	margin-top: 30px;
+	overflow:visible;
+}
+.main-nav>li{
+	text-align: center;
+	list-style: none;
+	position: relative;
+
+}
+.main-nav>li>a{
+	color: #c0c0c0;
+	display: block;
+	min-height: 50px;
+	line-height: 50px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	padding-right: 20px;
+
+}
+.main-nav>li>a:hover{
+	color:#000;
+	text-decoration: none;
+}
+
+.sub-nav-holder{
+	position: fixed;
+	height: 100%;
+	background-color: #000;
+	background: rgba(0,0,0,0.85);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
+	width: 200px;
+	left: 350px;
+	z-index: 99;
+}
+.sub-nav{
+	position: absolute;
+	top: 310px;
+	width: 100%;
+}
+.fleche{
+	position: absolute;
+	left: 350px;
+	top: 340px;
+	display: block;
+	width: 9px;
+	height: 16px;
+	z-index: 128;
+	background: url(../images/fleche.png) no-repeat;
+}
+
+.sub-nav>li{
+	padding:0;
+}
+.sub-nav>li>a{
+	color:#c0c0c0;
+	display:block;
+	width: 200px;
+	text-align: center;
+	padding:10px 0px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+}
+.sub-nav>li>a:hover{
+	color:#fff;
+	text-decoration: none;	
+	text-decoration: underline;
+}
+
+/*---------homepage right---------*/
+.right{
+	margin-left: 350px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+.jumbotron{
+	text-align: center;
+	color: #fff;
+	background-color: transparent;
+	border: 3px solid #fff;
+	margin-top: 180px;
+	padding:60px 0px;
+}
+.jumbotron>h2{
+	margin-bottom: 50px;
+}
+.jumbotron>p{
+	margin-bottom: 50px;
+}
+.btn{
+	display: block;
+	width: 150px;
+	margin: auto;
+	color:#eee;
+	border-radius: 6px;
+	border: 1px solid #e0e0e0;
+	padding: 10px 8px;
+	text-align: center;
+}
+.btn:hover{
+	color:#fff;
+	border: 1px solid #fff;
+}
+
+/*--------content right-------*/
+.right{
+	padding: 50px;
+}
+.section{
+	color: #fff;
+	line-height: 26px;
+	background: rgba(0,0,0,0.5);
+	padding: 5px 10px;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
+}
+.section > .title{
+	font-weight: bold;
+	padding:  0px;
+	padding-left: 50px;
+	line-height: 27px;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 10px;
+	background: url(../../bio/images/list.png) no-repeat;
+}
