@@ -1,3 +1,4 @@
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 """
 Django settings for bio project.
 
@@ -30,12 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'suit',
+    'suit_redactor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mptt',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,35 +59,71 @@ WSGI_APPLICATION = 'bio.wsgi.application'
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates/'),
 )
-
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+    'django.core.context_processors.static',
+    'django.core.context_processors.i18n',
+)
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'bio',
+        'USER': 'jazdelu',
+    'PASSWORD':'lushizhao1129',
     }
 }
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_ROOT =  os.path.join(BASE_DIR, 'static/')
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
 STATIC_URL = '/static/'
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload/')
+
+SUIT_CONFIG = {
+    # header
+    'ADMIN_NAME': 'BIO-INBEV Website Manager',
+    'HEADER_DATE_FORMAT': 'Y-m-d',
+    'HEADER_TIME_FORMAT': 'H:i',
+
+    # forms
+    # 'SHOW_REQUIRED_ASTERISK': True,  # Default True
+    # 'CONFIRM_UNSAVED_CHANGES': True, # Default True
+
+    # menu
+    'MENU':(
+        {'app':'auth','label':'User','icon':'icon-user'},
+        {'app':'banner','label':'Banner','icon':'icon-leaf'},
+        {'app':'brand','label':'Brand','icon':'icon-gift'},
+        {'app':'page','label':'Page','icon':'icon-bookmark'},
+        {'label': 'Homepage', 'icon':'icon-leaf', 'url': '/'},
+    ),
+    # 'SEARCH_URL': '/admin/auth/user/',
+
+    'MENU_OPEN_FIRST_CHILD': True, # Default True
+    # 'MENU_EXCLUDE': ('auth.group',),
+    # misc
+    'LIST_PER_PAGE': 10
+}

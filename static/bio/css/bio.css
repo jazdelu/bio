@@ -2,6 +2,11 @@
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
+
+*{
+	outline: none!important;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -117,6 +122,31 @@ b{
 	z-index: 1024;
 
 }
+/*-----------scrollbar-----------*/
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-button {
+	width: 8px;
+	height:5px;
+}
+::-webkit-scrollbar-track {
+	background:#c0c0c0;
+	border: thin solid silver;
+	box-shadow: 0px 0px 3px #dfdfdf inset;
+	border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+	background:#fff;
+	border: thin solid silver;
+	border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background:#0c0c0c;
+}			
+
+
 
 /*---------logo---------*/
 
@@ -162,7 +192,7 @@ b{
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
 	width: 200px;
 	left: 350px;
-	z-index: 99;
+	z-index: 3000;
 }
 .sub-nav{
 	position: absolute;
@@ -198,7 +228,20 @@ b{
 	text-decoration: none;	
 	text-decoration: underline;
 }
-
+.consumption-nav{
+	width: 600px;
+}
+.consumption-nav .sub-nav>li>a{
+	width: 600px;
+	line-height: 26px;
+}
+.news-nav{
+	width: 200px;
+}
+.news-nav .sub-nav>li>a{
+	width: 200px;
+	line-height: 26px;
+}
 /*---------homepage right---------*/
 .right,.right1{
 	margin-left: 350px;
@@ -215,9 +258,13 @@ b{
 }
 .jumbotron>h2{
 	margin-bottom: 50px;
+	text-shadow:0 2px 2px rgba(0,0,0,0.4);
+
 }
 .jumbotron>p{
 	margin-bottom: 50px;
+	text-shadow:  0 2px 2px rgba(0,0,0,0.4);
+	font-weight: bold;
 }
 .btn{
 	display: block;
@@ -234,58 +281,46 @@ b{
 	border: 1px solid #fff;
 }
 
-/*--------content right #1-------*/
-.right{
-	padding: 50px;
-}
-.front{
-	font-weight: bold;
-	font-size: 24px;
+.btn-reverse{
+	display: block;
+	width: 200px;
 	text-align: center;
-	padding-bottom: 20px;
-	color:#fff;
-	text-shadow: #333333 0 2px 2px;
+	margin:5px auto;
+	color:#333!important;
+	border-radius: 6px;
+	border: 1px solid #c0c0c0;
+	padding: 10px 8px;
+	text-decoration: none!important;
 }
-.fix-picture{
-	text-align: center;
+.btn-reverse:hover{
+	color:#000;
 }
-.section{
-	color: #fff;
-	line-height: 26px;
-	background: rgba(0,0,0,0.5);
-	padding: 8px 10px;
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
-}
-.section > .title{
-	font-weight: bold;
-	padding:  0px;
-	padding-left: 50px;
-	line-height: 27px;
-	border-bottom: 1px solid #fff;
-	margin-bottom: 10px;
-	background: url(/static/bio/images/list.png) no-repeat center left;
-}
+
 
 /*-------content right #2---------*/
 .right1{
 	padding: 50px;
+
 }
 .front1{
+	display: block;
 	font-weight: bold;
 	font-size: 16px;
 	text-align: center;
-	width: 120px;
 	margin: 0 auto; 
-	padding-bottom: 15px;
-	margin-bottom: 15px;
 	letter-spacing: 2px;
 	color:#000;
 	text-shadow: #ccc 0 2px 2px;
-	border-bottom: 1px solid #000;
+}
+.line{
+	text-decoration: line-through;
+	text-align: center;
+	padding: 20px 0px;
 }
 .sfront1{
 	text-align: center;
 	margin-bottom: 15px;
+	letter-spacing: 2px;
 }
 .fix-picture{
 	text-align: center;
@@ -296,6 +331,8 @@ b{
 	padding: 8px 10px;
 }
 .section1 > .title{
+	width: 780px;
+	margin: 0 auto;
 	font-weight: bold;
 	padding:  0px;
 	padding-left: 50px;
@@ -303,6 +340,10 @@ b{
 	border-bottom: 1px solid #000;
 	margin-bottom: 10px;
 	background: url(/static/bio/images/list-black.png) no-repeat center left;
+}
+.section1 > .content{
+	margin: 0 auto;
+	width: 780px;
 }
 /*------Detail & List----------*/
 .brand{
@@ -312,7 +353,7 @@ b{
 
 }
 .brand-info{
-	padding: 50px 0px;
+	padding: 50px 0px 10px 0px;
 	background-color: #fff;
 	color:#000;
 }
@@ -320,32 +361,116 @@ b{
 	width: 100px;
 	margin: 0 auto;
 	letter-spacing: 4px;
-	padding-bottom: 15px;
-	border-bottom : 1px  solid #000;
 }
 .brand-info> .short{
-	padding: 15px;
 	letter-spacing: 2px;
+	margin-bottom: 20px;
 }
-.brand-info > .long{
+.brand .long{
 	width: 780px;
 	margin: 0 auto;
 	text-align: left;
+	padding: 8px 7px;
+}
+.product{
+	text-align: center;
+	position: relative;
+	height: 350px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.product .overlay{
+	background:rgba(0,0,0,.75);
+    opacity:0;
+	-o-transition:opacity .25s ease;
+	-ms-transition:opacity .25s ease;
+	-moz-transition:opacity .25s ease;
+	-webkit-transition:opacity .25s ease;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 99;
+}
+.product>a:hover>.overlay{
+	opacity: 1;
+}
+.product>a>.overlay>h4{
+	color:#fff;
+	line-height: 350px;
 }
 
-.product-info {
-	padding:50px;
+/*------------tab-------------*/
+#tab{
+	width: 780px;
+	margin:0 auto;
+	text-align: left;
+	margin-top: 20px;
 }
-.product-info> .title{
-	width: 100px;
-	margin: 0 auto;
-	letter-spacing: 4px;
-	padding-bottom: 15px;
-	border-bottom : 1px  solid #000;
+#tab>ul{
+	position: relative;
+	border: 0 solid silver;
+	border-width: 0 0 1px 0;
+	padding-left: 20px;
 }
-.product-info> .short{
-	padding: 15px;
-	letter-spacing: 2px;
+#tab>ul>li{
+	display: inline;
+	margin: 0;
+	float: left;
+}
+#tab>ul>li>a{
+	display: block;
+	padding: 15px 40px;
+	text-align:center;
+	border:none;
+	color:#c0c0c0;
+	background-color:#fff;
+	text-decoration: none;
+}
+#tab>ul>li[aria-selected="true"]>a{
+	color:#000;
+}
+/*-----------popup dialog--------------*/
+.dialog{
+	background-color:#fff;
+	z-index: 2048;
+	padding: 5px;
+	-webkit-box-shadow:10px 10px 5px rgba(0,0,0,0.4);
+}
+.holder{
+	padding: 8px 10px;
+	border:8px solid #000;
+	height:690px;
+	overflow-y: scroll;
+	overflow-x:hidden;
+}
+.holder>.img{
+	width: 260px;
+	text-align: center;
+	clear: both;
+	float: left;
+}
+.holder>.description{
+
+}
+.ui-widget-overlay{
+    background-color: black;
+    background-image: none;
+    opacity: 0.4;
+    z-index: 2;    
+}
+.ui-dialog .ui-widget-header {
+    background: #F9F9F9;
+    display: none;
+    font-weight: normal;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0.1em .5em;
+    display: none;
+    position: relative;
+    font-size: 1em;
 }
 /*------------footer----------*/
 .social{

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset= "utf-8">
+	<meta name="author" content="Bio In-Bev & Jaz">
+	<meta name="description" content = "Bio In-Bev is the first French company developing a full range of Organic and Fair trade beverages that allows Healthy & Eco-conscious people living in China to drink a premium and first quality beverage">
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/bio/css/bio.css">
+	<link rel="stylesheet" type="text/css" href="/static/vegas/jquery.vegas.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/fontello/fontello.css">
+	{% block css %}{% endblock %}
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-3 left">
+			<header>
+				<a href="#" title="Go to home">
+					<img class="logo" src="/static/bio/images/logo.jpg" class="logo">
+				</a>
+			</header>
+			<nav>
+				<ul class="main-nav">
+					<li><a href="/">HOME</a></li>
+					<li><a href="javascript:void(0)" class = "sub" data=".consumption-nav">ORGANIC CONSUMPTION</a></li>
+					<li><a href="/about-us/">ABOUT US</a></li>
+					<li><a href="#" class="sub" data=".products-nav">OUR PRODUCTS</a>
+					</li>
+
+					<li><a href="#">MISSIONS & VALUES</a></li>
+					<li><a href="#">OUR PARTNERS</a></li>
+					<li><a href="javascript:void(0)" class="sub" data=".news-nav">News</a></li>
+					<li><a href="#">CONTACT US</a></li>
+				</ul>
+			</nav>
+			<footer>
+				<ul class="social">
+					<li><a href="#" class="icon-social-sina-weibo"></a></li>
+					<li><a href="#" class="icon-social-facebook"></a></li>
+					<li><a href="#" class="icon-social-instagram"></a></li>
+				</ul>
+				<ul>
+					<li><a href="#"></a></li>
+				</ul>
+				<p class="copyright">Copyright &copy; Bio In-Bev 2014 .<br/> All Rights Reserved</p>
+			</footer>
+		</div>
+		<div class="sub-nav-holder consumption-nav">
+			<nav>
+				<ul class="sub-nav">
+					<li><a href="/why-organic/">Why Organic</a></li>
+					<li><a href="/5-reasons-to-consume-organic-&-fair-trade-products/">5 Reasons to consume Organic & Fair Trade Products</a></li>
+					<li><a href="/simple-way-to-understand-organic-wines/">Simple Way to understand Organic Wines </a></li>
+					<li><a href="/certifications-bodies/"> Certifications Bodies </a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="sub-nav-holder products-nav">
+			<nav>
+				<ul class="sub-nav">
+					<li><a href="/brand/fair/"> FAIR </a></li>
+					<li><a href="#"> MENEAU </a></li>
+					<li><a href="#"> MELUSINE </a></li>
+					<li><a href="#"> BIO IN WINE </a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="sub-nav-holder news-nav">
+			<nav>
+				<ul class="sub-nav">
+					<li><a href="#"> EVENT </a></li>
+					<li><a href="#"> PRESS REVIEW </a></li>
+				</ul>
+			</nav>
+		</div>
+
+		{% block right %}
+		<div class="col-md-9 right">
+			<div class="jumbotron">
+			  <h2><b>Unique. Urban. Organic. </b></h2>
+			  <p>With a full range of certified Organic products from France, Bio In-Bev offers a drink for every lifestyle.</p>
+			  <a href="/about/" class="btn">LEARN MORE</a>
+			</div>
+		</div>
+		{% endblock %}
+	</div>
+
+
+<script type="text/javascript" src="/static/bio/js/jquery.js"></script>
+<script src="/static/bio/js/jquery-ui-1.10.4.min.js"></script>
+<script type="text/javascript" src="/static/vegas/jquery.vegas.min.js">
+</script>
+<script type="text/javascript">
+	$(function(){
+		var timeout = "";
+		var sub = ""
+		$(".sub").mouseover(function(){
+			sub = $(this).attr("data");
+			$(sub).show('slide', {direction: 'left'}, 300);
+		}).mouseleave(function(){
+			sub = $(this).attr("data");
+			timeout  = setTimeout(function(){$(sub).hide('slide', {direction: 'left'}, 300);},50);
+		});
+		$(".sub-nav-holder").mouseover(function(){
+			clearTimeout(timeout);
+		}).mouseleave(function(){
+			$(".sub-nav-holder").hide('slide', {direction: 'left'}, 300);
+		});
+	});
+</script>
+{% block js %}
+{% endblock %}
+</body>
+</html>

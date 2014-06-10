@@ -1,13 +1,6 @@
 from django.shortcuts import render_to_response
-
+from django.template import RequestContext
+from banner.models import Banner
 def home(request):
-	return render_to_response("index.html")
-
-def brand(request):
-	return render_to_response("brand.html")
-
-def consumption(request):
-	return render_to_response("consumption.html")
-
-def about(request):
-	return render_to_response("about.html")
+	banners = Banner.objects.all()
+	return render_to_response("index.html",{ "banners":banners },context_instance=RequestContext(request))

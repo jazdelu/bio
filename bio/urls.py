@@ -6,9 +6,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'bio.views.home', name='home'),
-    url(r'^brand/$', 'bio.views.brand', name='brand'),
-    url(r'^consumption/$', 'bio.views.consumption', name='consumption'),
-    url(r'^about/$', 'bio.views.about', name='about'),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^brand/', include('brand.urls')),
+    url(r'^$','bio.views.home', name='home'),
+    url(r'^(?P<url_parameter>.+)/$', 'page.views.get_page_by_url_parameter', name='get_page_by_url_parameter'),
     # url(r'^blog/', include('blog.urls')),
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

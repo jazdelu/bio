@@ -1,116 +1,89 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-	<meta charset= "utf-8">
-	<meta name="author" content="Bio In-Bev & Jaz">
-	<meta name="description" content = "Bio In-Bev is the first French company developing a full range of Organic and Fair trade beverages that allows Healthy & Eco-conscious people living in China to drink a premium and first quality beverage">
-	<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/bio/css/bio.css">
-	<link rel="stylesheet" type="text/css" href="/static/vegas/jquery.vegas.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/fontello/fontello.css">
-</head>
-<body>
-	<div class="container">
-		<div class="col-md-3 left">
-			<header>
-				<a href="#" title="Go to home">
-					<img class="logo" src="/static/bio/images/logo.jpg" class="logo">
-				</a>
-			</header>
-			<nav>
-				<ul class="main-nav">
-					<li><a href="/">HOME</a></li>
-					<li><a href="/consumption/">ORGANIC CONSUMPTION</a></li>
-					<li><a href="#" class="products">OUR PRODUCTS</a>
-					</li>
-					<li><a href="/about/">ABOUT US</a></li>
-					<li><a href="#">MISSIONS & VALUES</a></li>
-					<li><a href="#">OUR PARTNERS</a></li>
-					<li><a href="#">PRESS REVIEW</a></li>
-					<li><a href="#">EVENTS</a></li>
-				</ul>
-			</nav>
-			<footer>
-				<ul class="social">
-					<li><a href="#" class="icon-social-sina-weibo"></a></li>
-					<li><a href="#" class="icon-social-facebook"></a></li>
-					<li><a href="#" class="icon-social-instagram"></a></li>
-				</ul>
-				<p class="copyright">Copyright &copy; Bio In-Bev 2014 .<br/> All Rights Reserved</p>
-			</footer>
-		</div>
-		<div class="sub-nav-holder">
-			<nav>
-				<ul class="sub-nav">
-					<li><a href="/brand/"> FAIR </a></li>
-					<li><a href="#"> MENEAU </a></li>
-					<li><a href="#"> MELUSINE </a></li>
-					<li><a href="#"> BIO IN WINE </a></li>
-				</ul>
-			</nav>
-		</div>
-		<div class="fleche"></div>
+{% extends "base.html" %}
+{% block title %}{{ brand.title|upper }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/bio/css/jquery.ui.core.min.css">
+{% endblock %}
+{% block right %}
 		<div class="col-md-9 right brand">
 			<div class="brand-info">
-				<div class="title"><h2>FAIR</h2></div>
-				<div class="short"><h4>THE COMPANY</h4></div>
+				<div class="title"><h2>{{ brand.title|upper }}</h2></div>
+				<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
+				<div class="short"><h4>{{ brand.short_description }}</h4></div>
+				{% if brand.banner %}
 				<div class="fix-picture">
-					<img src="/static/bio/images/fair.jpg">
+					<img src="{{ brand.banner.url }}" />
 				</div>
-				<div class="long">
-					FAIR. Spirits and Liquors is a Revolution in the Spirits Industry.<br/>
-
-Bio In-Bev is glad to introduce premiums Spirits and Liquors for people who care about social responsibility and Organic products even when they sip an amazing cocktail in Paris, New York, London, Los Angeles… and now SHANGHAI! (Click here to see our FAIR. Retailers)<br/><br/>
-
-FAIR is the first line of Socially Responsible Spirits, with:
-FAIR. Vodka made from Bolivian quinoa (distilled and bottled in the Cognac region)
-FAIR. Belize rum (bottled in the Cognac region)
-FAIR. Liqueur made with Mexican coffee or Himalaya Goji Baies (infused and bottled in the Cognac region)<br/>
-
-Fair trade & French know-how: Here is the successful FAIR. Recipe!<br/>
-
-Each times a FAIR. Cocktail is consumed around the world; there is a tangible impact on the famers' living conditions. <br/>
-Moreover, Organic alcohol means that the alcohol is produced from products free of pesticides and fertilizers, chemicals that, when ingested frequently, can potentially increase the risk of cancer and other health risks.<br/>
-
-Take part to this Revolution in the Spirits Industry by drinking FAIR. Spirits and Liquors! <br/>
-
-<b>“People will always drink but they can drink better.” </b>- Alexandre Koiransky, CEO and Founder of FAIR. Spirits<br/>
-
-<b>Think Human. Drink Fair.</b>
-
-				</div>
+				{% endif %}
 			</div>
-			<div class="product-info">
-				<div class="short"><h4>THE PRODUCTS</h4></div>
-				<div class="fix-picture">
-					<img src="/static/bio/images/fair-product.jpg">
+			<div id="tab">
+				<ul>
+					<li><a href="#tab-1">Products</a></li>
+					<li><a href="#tab-2">Brand</a></li>
+				</ul>
+				<div class="product-info" id="tab-1">
+					{% for p in brand.products.all %}
+					<div class="col-md-4 col-xs-4 col-sm-4 product" data="{{ p.id }}">
+						<a href="javascript:void(0)">
+							<img src="{{ p.image.url }}" />
+							<div class="overlay">
+								<h4>{{ p.name }}</h4>
+							</div>
+						</a>
+						<div class="dialog" id="{{ p.id }}">
+							<div class="holder">
+								<a href="#" class="btn-reverse">
+									Download Taste Note
+								</a>
+								<div class="img">
+									<img src="{{ p.image.url }}" />
+								</div>
+								<div class="description">
+								{{ p.description|safe }}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
 				</div>
-				<div class="list">
+				<div class="long" id="tab-2">
+					{{ brand.long_description|safe }}
 				</div>
 			</div>
 		</div>
-	</div>
+{% endblock %}
 
-
-<script type="text/javascript" src="/static/bio/js/jquery.js"></script>
-<script src="/static/bio/js/jquery-ui-1.10.4.min.js"></script>
-<script type="text/javascript" src="/static/vegas/jquery.vegas.min.js">
-</script>
-<script type="text/javascript">
+{% block js %}
+	<script type="text/javascript">
 	$(function(){
-		timeout = ""
-		$(".sub-nav-holder, .fleche").hide();
-		$(".products").mouseover(function(){
-			$(".sub-nav-holder, .fleche").show('slide', {direction: 'left'}, 300);
-		}).mouseleave(function(){
-			timeout  = setTimeout(function(){$(".sub-nav-holder, .fleche").hide('slide', {direction: 'left'}, 300);},500);
-		});
-		$(".sub-nav-holder, .fleche").mouseover(function(){
-			clearTimeout(timeout);
-		}).mouseleave(function(){
-			setTimeout(function(){$(".sub-nav-holder, .fleche").hide('slide', {direction: 'left'}, 300);},500);
-		});
+		$("#tab").tabs();
 	});
-</script>
-</body>
-</html>
+  $(function() {
+    $( ".dialog" ).dialog({
+      dialogClass: "no-close info-dialog",
+      width: 600,
+      height: 700,
+      autoOpen: false,
+      modal: true,
+      show: {
+        effect: "slide",
+        duration: 500
+      },
+      hide: {
+        effect: "clip",
+        duration: 500
+      },
+      open: function(){
+          jQuery('.ui-widget-overlay').bind('click',function(){
+          jQuery('.dialog').dialog('close');
+      })
+      }
+    });
+ 
+    $(".product").click(function() {
+       var id = $(this).attr("data");
+       id = "#"+id
+      $(id).dialog("open");
+    });
+  });
+	</script>
+{% endblock %}

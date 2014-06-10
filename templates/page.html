@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Organic Consumption{% endblock %}
+{% block right %}
+		<div class="col-md-9 right1">
+			<div class="front1">
+				{{ page.title }}
+			</div>
+			{% if page.s_title %}
+			<div class="line"> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
+			<div class="sfront1">
+				{{ page.s_title }}
+			</div>
+			{% endif %}
+			{% if page.banner %}
+			<div class="fix-picture">
+				<img src="{{ page.banner.url }}">
+			</div>
+			{% endif %}
+			{% for s in page.sections.all %}
+			<div class="section1">
+				<div class="title">
+					{{ s.title }}
+				</div>
+				<div class="content">
+					{{ s.content|safe }}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		{% endblock %}
