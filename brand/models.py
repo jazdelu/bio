@@ -1,8 +1,14 @@
 from django.db import models
 
 # Create your models here.
+
+BRAND_TYPE_CHOICES = (
+		("wine","BIO IN WINE"),
+)
+
 class Brand(models.Model):
 	title = models.CharField(max_length = 128, verbose_name= "Brand Title")
+	taxonomy = models.CharField(max_length = 128,verbose_name = "Brand Type",choices = BRAND_TYPE_CHOICES, blank = True, null = True)
 	short_description = models.CharField(max_length = 128, verbose_name="Short Description")
 	banner = models.ImageField(upload_to = "banner/",blank = True, null = True, verbose_name = "Banner", help_text = "780x280 recommend")
 	long_description = models.TextField(verbose_name = "Long Description")

@@ -170,12 +170,13 @@ b{
 .main-nav>li>a{
 	color: #c0c0c0;
 	display: block;
-	min-height: 50px;
-	line-height: 50px;
+	min-height: 48px;
+	line-height: 48px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 14px;
 	padding-right: 20px;
+	font-weight: bold;
 
 }
 .main-nav>li>a:hover{
@@ -222,6 +223,7 @@ b{
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 14px;
+	font-weight: bold;
 }
 .sub-nav>li>a:hover{
 	color:#fff;
@@ -229,10 +231,10 @@ b{
 	text-decoration: underline;
 }
 .consumption-nav{
-	width: 600px;
+	width: 350px;
 }
 .consumption-nav .sub-nav>li>a{
-	width: 600px;
+	width: 350px;
 	line-height: 26px;
 }
 .news-nav{
@@ -252,7 +254,8 @@ b{
 	text-align: center;
 	color: #fff;
 	background-color: transparent;
-	border: 3px solid #fff;
+	background: rgba(0,0,0,0.4);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
 	margin-top: 180px;
 	padding:60px 0px;
 }
@@ -285,7 +288,7 @@ b{
 	display: block;
 	width: 200px;
 	text-align: center;
-	margin:5px auto;
+	margin:20px auto;
 	color:#333!important;
 	border-radius: 6px;
 	border: 1px solid #c0c0c0;
@@ -344,6 +347,27 @@ b{
 .section1 > .content{
 	margin: 0 auto;
 	width: 780px;
+}
+.images{
+	width: 780px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+.images>.image{
+	display: block;
+	width: auto;
+	height: 200px;
+	text-align: center;
+	float: left;
+	padding: 0px 30px;
+}
+.image>.image>.title{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.image>.image>img{
+	height: 100%;
 }
 /*------Detail & List----------*/
 .brand{
@@ -446,10 +470,11 @@ b{
 	overflow-x:hidden;
 }
 .holder>.img{
+	display: block;
+	margin: 0 auto;
 	width: 260px;
 	text-align: center;
 	clear: both;
-	float: left;
 }
 .holder>.description{
 
@@ -473,10 +498,15 @@ b{
     font-size: 1em;
 }
 /*------------footer----------*/
+footer{
+	margin-top: 20px;
+	width: 100%;
+}
 .social{
 	overflow: hidden;
 	text-align: center;
-	padding: 30px 50px;
+	padding: 30px 80px;
+
 }
 .social>li{
 	float: left;
@@ -495,8 +525,26 @@ b{
 .social>li>a:hover{
 	color: #000;
 }
+.footer-nav{
+	overflow: hidden;
+	padding: 10px 0px;
+}
+.footer-nav>li{
+	float: left;
+}
+.footer-nav>li>a{
+	color:#c0c0c0;
+	display: block;
+	padding: 8px 12px;
+	text-align:center;
+	font-size: 12px;
+}
+.footer-nav>li>a:hover{
+	color:#000;
+	text-decoration: underline;
+}
 .copyright{
-	font-size: 14px;
+	font-size: 12px;
 	text-align: center;
 	color:#c0c0c0;
 }

@@ -13,7 +13,7 @@
 			{% endif %}
 			{% if page.banner %}
 			<div class="fix-picture">
-				<img src="{{ page.banner.url }}">
+				<img src="{{ page.banner.url }}" width="780">
 			</div>
 			{% endif %}
 			{% for s in page.sections.all %}
@@ -26,5 +26,13 @@
 				</div>
 			</div>
 			{% endfor %}
+			<div class="images">
+				{% for i in page.images.all %}
+				<div class="image">
+					<p class="title">{{ i.title|default_if_none:" " }}</p>
+					<img src= "{{ i.image.url }}" height = "100%">
+				</div>
+				{% endfor %}
+			</div>
 		</div>
 		{% endblock %}

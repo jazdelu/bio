@@ -20,7 +20,7 @@ class ProductAdminForm(ModelForm):
 		}
 
 class BrandAdmin(admin.ModelAdmin):
-	list_display = ('title','short_description',)
+	list_display = ('title','taxonomy','short_description',)
 	form = BrandAdminForm
 
 admin.site.register(Brand, BrandAdmin)
