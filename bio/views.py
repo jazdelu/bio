@@ -20,8 +20,8 @@ def sendmail(request):
 	if request.POST:
 		content = request.POST['email']
 		language = request.POST['language']
-		send_mail('A New Email is submiited from www.bio-inbev.com', content, 'lushizhao@qq.com',
-    ['lushizhao@qq.com'], fail_silently=False)
+		send_mail('A New Email is submiited from www.bio-inbev.com', content, 'contact@bio-inbev.com',
+    ['lushizhao@qq.com'])
 		status = 0
 		if language == 'en':
 			return HttpResponseRedirect("/")
