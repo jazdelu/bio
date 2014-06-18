@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from banner.models import Banner
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 
 def home(request):
 	banners = Banner.objects.all()
@@ -20,8 +20,9 @@ def sendmail(request):
 	if request.POST:
 		content = request.POST['email']
 		language = request.POST['language']
-		send_mail('A New Email is submiited from www.bio-inbev.com', content, 'contact@bio-inbev.com',
-    ['lushizhao@qq.com'])
+		subject = 'A new email is submitted from www.bio-inbev.com'
+		msg = EmailMultiAlternatives(subject, content, 'lushizhao@qq.com', ['lushizhao@qq.com'])
+		msg.send()
 		status = 0
 		if language == 'en':
 			return HttpResponseRedirect("/")
