@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^brand/', include('brand.urls')),
     url(r'^$','bio.views.coming', name='coming soon'),
     url(r'^brand/', include('brand.urls')),
-    url(r'^sendmail/$','bio.views.sendmail',name='sendmail'),
+    url(r'^send_mail/$','bio.views.sendmail',name='sendmail'),
     url(r'^cn/$','bio.views.coming_cn',name='coming_cn'),
     # url(r'^blog/', include('blog.urls')),
 )+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
