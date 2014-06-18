@@ -382,9 +382,10 @@ b{
 	color:#000;
 }
 .brand-info> .title{
-	width: 100px;
-	margin: 0 auto;
+	text-align: center;
+	font-weight: bold;
 	letter-spacing: 4px;
+	font-size: 32px;
 }
 .brand-info> .short{
 	letter-spacing: 2px;

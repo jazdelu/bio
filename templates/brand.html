@@ -6,7 +6,7 @@
 {% block right %}
 		<div class="col-md-9 right brand">
 			<div class="brand-info">
-				<div class="title"><h2>{{ brand.title|upper }}</h2></div>
+				<div class="title">{{ brand.title|upper }}</div>
 				<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
 				<div class="short"><h4>{{ brand.short_description }}</h4></div>
 				{% if brand.banner %}
@@ -34,9 +34,11 @@
 								<div class="img">
 									<img src="{{ p.image.url }}" />
 								</div>
+								{% if p.attach %}
 								<a href="{{ p.attach.url }}" class="btn-reverse">
 									Download Tasting Note
 								</a>
+								{% endif %}
 								<div class="description">
 								{{ p.description|safe }}
 								</div>
