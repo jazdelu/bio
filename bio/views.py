@@ -21,7 +21,7 @@ def sendmail(request):
 		content = request.POST['email']
 		language = request.POST['language']
 		subject = 'A new email is submitted from www.bio-inbev.com'
-		msg = EmailMultiAlternatives(subject, content, 'lushizhao@qq.com', ['lushizhao@qq.com'])
+		msg = EmailMultiAlternatives(subject, content, 'robot@minibobi.com', ['lushizhao@qq.com'])
 		msg.send()
 		status = 0
 		if language == 'en':

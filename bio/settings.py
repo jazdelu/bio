@@ -131,9 +131,9 @@ SUIT_CONFIG = {
     'LIST_PER_PAGE': 10
 }
 
-EMAIL_HOST = 'smtp.qq.com'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = 'lushizhao@qq.com'
-EMAIL_HOST_PASSWORD = 'lushizhao891129'
-DEFAULT_FROM_EMAIL = 'lushizhao@qq.com'
-SERVER_EMAIL = 'lushizhao@qq.com'
+EMAIL_HOST = 'smtp.exmail.qq.com'
+EMAIL_HOST_USER = 'robot@minibobi.com'
+EMAIL_HOST_PASSWORD = 'lushizhao1129'
+DEFAULT_FROM_EMAIL = 'robot@minibobi.com'
+SERVER_EMAIL = 'robot@minibobi.com'
+
