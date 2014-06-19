@@ -78,11 +78,12 @@
 		.tip{
 			margin-bottom: 10px;
 			line-height: 26px;
+			font-weight: bold;
 		}
 		.language{
 			overflow: hidden;
 			display: block;
-			width: 180px;
+			width: 190px;
 			margin-top: 15px;
 		}
 		.language>li{
@@ -92,6 +93,7 @@
 		.language>li>a{
 			color:#fff;
 			padding: 8px 10px;
+			font-weight: bold;
 		}
 		.language>li>a:hover{
 			color:#fff;
@@ -111,7 +113,7 @@
 		<h2><b>Unique. Urban. Organic. </b></h2>
 		<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
 		<h2>COMING SOON </h2>
-		<p>{% block p1 %}Bio In Bev, the first beverages company offering a full range of French Organic Beverages in China. No harmful additives, chemical pesticides or chemical yeast.{% endblock %}</p>
+		<p>{% block p1 %}Bio In Bev, the first beverages company offering a full range of French Organic Beverages in China. <br/>No harmful additives, chemical pesticides or chemical yeast.{% endblock %}</p>
 		<div class="tip">{% block p2 %}Discover our full range soon by filling your email bellow.<br/> Bio In Bev, an organic drink for every Lifestyle.{% endblock %}</div>
 		<form action = "/send_mail/" method = "post" id="form" data="1">
 			{% csrf_token %}
