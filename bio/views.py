@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from banner.models import Banner
 from django.core.mail import EmailMultiAlternatives
-
+import re
 def home(request):
 	banners = Banner.objects.all()
 	return render_to_response("index.html",{ "banners":banners },context_instance=RequestContext(request))
@@ -16,18 +16,22 @@ def coming_cn(request):
 	return render_to_response("coming_cn.html",{ "language":"cn" },context_instance=RequestContext(request))
 
 def sendmail(request):
-	status = 1
+	error = ''
 	if request.POST:
 		content = request.POST['email']
 		language = request.POST['language']
-		subject = 'A new email is submitted from www.bio-inbev.com'
-		msg = EmailMultiAlternatives(subject, content, 'robot@minibobi.com', ['contact@bio-inbev.com'])
-		msg.send()
-		status = 0
-		if language == 'en':
-			return HttpResponseRedirect("/")
+		if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", content) != None:
+			subject = 'A new email is submitted from www.bio-inbev.com'
+			msg = EmailMultiAlternatives(subject, content, 'robot@minibobi.com', ['lushizhao@qq.com'])
+			msg.send()
 		else:
-			return HttpResponseRedirect("/cn/")
+			error = 'Please submit a valid E-mail!'
+
+		if language == 'en':
+			return render_to_response("coming.html",{'error':error},context_instance=RequestContext(request))
+		else:
+			return render_to_response("coming_cn.html",{'error':error},context_instance=RequestContext(request))
+
 
 	else:
 		return HttpResponseRedirect("/")

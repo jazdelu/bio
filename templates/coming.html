@@ -14,6 +14,7 @@
 		body,html{
 			width: 100%;
 			height: 100%;
+			font-size: 100%;
 		}
 		.container{
 			width: 100%;
@@ -100,8 +101,10 @@
 			color:#fff;
 			text-decoration: underline;
 		}
-		.alert{
-			margin-bottom: 0px;
+		.error{
+			font-size: 12px;
+			text-align: left;
+			margin-top: 5px;
 		}
 	</style>
 </head>
@@ -109,7 +112,7 @@
 <div class="container">
 	<div class="jumbotron">
 		<div class="logo">
-		<img src="/static/bio/images/logo-reverse.png" class="logo">
+		<img src="/static/bio/images/logo-reverse.png" class="logo" width = "280px">
 		</div>
 		<h2><b>Unique. Urban. Organic. </b></h2>
 		<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
@@ -123,6 +126,9 @@
 		      <span class="input-group-btn">
 		        <button class="btn btn-default" type="button" id="go">{% block btn %}Submit{% endblock %}</button>
 		      </span>
+		      {% if error %}
+		      <p class="error">{{ error }}</p>
+		      {% endif %}
 	    	</div>
 	    	   <input type="hidden" name="language" value="{{ language }}"/>
     	</form>
