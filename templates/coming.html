@@ -130,7 +130,7 @@
 		      <p class="error">{{ error }}</p>
 		      {% endif %}
 	    	</div>
-	    	   <input type="hidden" name="language" value="{{ language }}"/>
+	    	   <input type="hidden" name="language" value="{{ language|default_if_none:'en' }}"/>
     	</form>
     	<ul class="language">
     		<li><a href="/">English</a></li>

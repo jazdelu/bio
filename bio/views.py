@@ -22,15 +22,15 @@ def sendmail(request):
 		language = request.POST['language']
 		if re.match("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$", content) != None:
 			subject = 'A new email is submitted from www.bio-inbev.com'
-			msg = EmailMultiAlternatives(subject, content, 'robot@minibobi.com', ['lushizhao@qq.com'])
+			msg = EmailMultiAlternatives(subject, content, 'robot@minibobi.com', ['contact@bio-inbev.com'])
 			msg.send()
 		else:
 			error = 'Please submit a valid E-mail!'
 
 		if language == 'en':
-			return render_to_response("coming.html",{'error':error},context_instance=RequestContext(request))
+			return render_to_response("coming.html",{'error':error,'language':'en'},context_instance=RequestContext(request))
 		else:
-			return render_to_response("coming_cn.html",{'error':error},context_instance=RequestContext(request))
+			return render_to_response("coming_cn.html",{'error':error,'language':'cn'},context_instance=RequestContext(request))
 
 
 	else:
