@@ -465,6 +465,7 @@ b{
 .regions>li>a{
 	font-weight: bold;
 	padding: 15px 20px!important;
+	font-size: 14px;
 }
 .regions>li:first-child>a{
 	background-color:#c0c0c0!important;
