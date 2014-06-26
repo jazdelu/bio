@@ -31,7 +31,7 @@ class Region(models.Model):
 class Winery(models.Model):
 	region = models.ForeignKey(Region, verbose_name = "Region",related_name = "wineries")
 	name = models.CharField(max_length = 128, verbose_name = "Name")
-	owner = models.CharField(max_length = 128, verbose_name = "Winery")
+	owner = models.CharField(max_length = 128, verbose_name = "Owner",null = True, blank = True)
 	image = models.ImageField(upload_to="winery/", verbose_name ='Image',help_text = "780x280 recommend", null = True, blank = True)
 	description = models.TextField(verbose_name = "Description") 
 
@@ -46,7 +46,7 @@ class Winery(models.Model):
 
 class Product(models.Model):
 	name = models.CharField(max_length = 128, verbose_name  ="Product Name")
-	image = models.ImageField(upload_to = "product/", verbose_name = "Product Image")
+	image = models.ImageField(upload_to = "product/", verbose_name = "Product Image",help_text = 'Image height have to be 350px')
 	attach = models.FileField(upload_to = "file/", verbose_name = "Attachment",blank = True, null = True)
 	brand = models.ForeignKey(Brand,verbose_name = "Brand",related_name = "products")
 	winery = models.ForeignKey(Winery, related_name = "products", null = True, blank = True)
