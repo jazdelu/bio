@@ -435,6 +435,7 @@ b{
 }
 #tab>ul{
 	position: relative;
+	overflow: hidden;
 	border: 0 solid silver;
 	border-width: 0 0 1px 0;
 	padding-left: 20px;
@@ -455,6 +456,31 @@ b{
 }
 #tab>ul>li[aria-selected="true"]>a{
 	color:#000;
+}
+
+.regions{
+	overflow: hidden;
+	padding-left: 1px!important;
+}
+.regions>li>a{
+	font-weight: bold;
+	padding: 15px 30px!important;
+}
+.regions>li:first-child>a{
+	background-color:#c0c0c0!important;
+	color:#fff!important;
+}
+.winery>a{
+	display: inline-block;
+	padding:20px 14px;
+	color: #000;
+}
+.winery>a:hover{
+	text-decoration: underline;
+}
+.tab-content{
+	overflow: hidden;
+	padding:10px 8px;
 }
 /*-----------popup dialog--------------*/
 .dialog{
@@ -477,9 +503,7 @@ b{
 	text-align: center;
 	clear: both;
 }
-.holder>.description{
 
-}
 .ui-widget-overlay{
     background-color: black;
     background-image: none;

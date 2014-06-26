@@ -1,7 +1,12 @@
 {% extends "base.html" %}
-{% block title %}{{ brand.title|upper }}{% endblock %}
+{% block title %}BIO IN WINE{% endblock %}
 {% block css %}
 <link rel="stylesheet" type="text/css" href="/static/bio/css/jquery.ui.core.min.css">
+<style>
+	.section1{
+		text-align: left;
+	}
+</style>
 {% endblock %}
 {% block right %}
 		<div class="col-md-9 right brand">
@@ -16,41 +21,26 @@
 				{% endif %}
 			</div>
 			<div id="tab">
-				<ul>
-					<li><a href="#tab-1">Products</a></li>
-					<li><a href="#tab-2">Brand</a></li>
+				<ul class="regions">
+					<li><a href="#tab-intro">BIO IN WINE</a></li>
+					 {% for r in regions %}
+					<li><a href="#tab-{{ r.id }}">{{ r.name }}</a></li>
+					{% endfor %}
 				</ul>
-				<div class="product-info" id="tab-1">
-					{% for p in brand.products.all %}
-					<div class="col-md-4 col-xs-4 col-sm-4 product" data="{{ p.id }}">
-						<a href="javascript:void(0)">
-							<img src="{{ p.image.url }}" />
-							<div class="overlay">
-								<h4>{{ p.name }}</h4>
-							</div>
+				<div class="tab-content" id="tab-intro">
+					{{ brand.long_description|safe }}
+				</div>
+				{% for r in regions %}
+				<div class="tab-content" id="tab-{{ r.id }}">
+					{% for w in r.wineries.all %}
+					<div class="col-md-6 col-xs-6 col-sm-6 winery">
+						<a href="/brand/bio-in-wine/{{ w.id }}/">
+							{{ w.name }}
 						</a>
-						<div class="dialog" id="{{ p.id }}">
-							<div class="holder">
-								<div class="img">
-									<img src="{{ p.image.url }}" />
-								</div>
-								{% if p.attach %}
-								<a href="{{ p.attach.url }}" class="btn-reverse">
-									Download Tasting Note
-								</a>
-								{% endif %}
-								<div class="description">
-								{{ p.description|safe }}
-								</div>
-							</div>
-						</div>
 					</div>
 					{% endfor %}
 				</div>
-				<div class="long" id="tab-2">
-					{{ brand.long_description|safe }}
-				</div>
-			</div>
+				{% endfor %}
 		</div>
 {% endblock %}
 

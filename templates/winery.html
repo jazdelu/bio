@@ -1,27 +1,29 @@
 {% extends "base.html" %}
-{% block title %}{{ brand.title|upper }}{% endblock %}
+{% block title %}{{ winery.name }}{% endblock %}
 {% block css %}
 <link rel="stylesheet" type="text/css" href="/static/bio/css/jquery.ui.core.min.css">
 {% endblock %}
 {% block right %}
 		<div class="col-md-9 right brand">
 			<div class="brand-info">
-				<div class="title">{{ brand.title|upper }}</div>
-				<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
-				<div class="short"><h4>{{ brand.short_description }}</h4></div>
+				<div class="title">{{ winery.name|upper }}</div>
 				{% if brand.banner %}
 				<div class="fix-picture">
 					<img src="{{ brand.banner.url }}" width="780px" />
 				</div>
+				{% else %}
+				<div class="fix-picture" style="margin-top:30px;">
+					<img src="http://placehold.it/780x230" width="780px" />
+				</div>				
 				{% endif %}
 			</div>
 			<div id="tab">
 				<ul>
 					<li><a href="#tab-1">Products</a></li>
-					<li><a href="#tab-2">Brand</a></li>
+					<li><a href="#tab-2">Introduction</a></li>
 				</ul>
-				<div class="product-info" id="tab-1">
-					{% for p in brand.products.all %}
+				<div class="tab-content" id="tab-1">
+					{% for p in winery.products.all %}
 					<div class="col-md-4 col-xs-4 col-sm-4 product" data="{{ p.id }}">
 						<a href="javascript:void(0)">
 							<img src="{{ p.image.url }}" />
@@ -47,8 +49,8 @@
 					</div>
 					{% endfor %}
 				</div>
-				<div class="long" id="tab-2">
-					{{ brand.long_description|safe }}
+				<div class="tab-content" id="tab-2">
+					{{ winery.description|safe }}					
 				</div>
 			</div>
 		</div>

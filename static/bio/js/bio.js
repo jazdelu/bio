@@ -11,3 +11,4 @@
 			setTimeout(function(){$(".sub-nav-holder").fadeOut();},500);
 		});
 	});
+
