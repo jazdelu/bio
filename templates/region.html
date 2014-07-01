@@ -15,6 +15,18 @@
 #tab>ul>li[aria-selected="true"]>a{
 	text-decoration: underline;
 }
+.section1{
+	overflow: hidden;
+}
+.image{
+	float: left;
+	width: 350px;
+}
+.content:first{
+	float:left;
+	width: 300px!important;
+	word-wrap: word-wrap;
+}
 </style>
 {% endblock %}
 {% block right %}
@@ -33,6 +45,9 @@
 					<div class="section1">
 						<div class="title">
 							Introduction
+						</div>
+						<div class="image">
+							<img src="http://placehold.it/300x400">
 						</div>
 						<div class="content">
 							{{ w.description|safe }}
