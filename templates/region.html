@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}{{ winery.name }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/bio/css/jquery.ui.core.min.css">
+<style>
+#tab>ul{
+	border:none;
+	width: 960px;
+	padding: 0px;
+}
+#tab>ul>li>a:hover{
+	color: #000;
+	text-decoration: underline;
+}
+#tab>ul>li[aria-selected="true"]>a{
+	text-decoration: underline;
+}
+</style>
+{% endblock %}
+{% block right %}
+		<div class="col-md-9 right brand">
+			<div class="brand-info">
+				<div class="title">{{ region.name|upper }}</div>
+			</div>
+			<div id="tab">
+				<ul>
+					{% for w in region.wineries.all %}
+					<li><a href="#tab-{{ w.id }}">{{ w.name }}</a></li>
+					{% endfor %}
+				</ul>
+				{% for w in region.wineries.all %}
+				<div class="tab-content" id="tab-{{ w.id }}">
+					<div class="section1">
+						<div class="title">
+							Introduction
+						</div>
+						<div class="content">
+							{{ w.description|safe }}
+						</div>
+					</div>	
+					<div class="section1">
+						<div class="title">
+							Products
+						</div>
+						<div class="content">
+							{% for p in w.products.all %}
+							<div class="col-md-4 col-xs-4 col-sm-4 product" data="{{ p.id }}">
+								<a href="javascript:void(0)">
+									<img src="{{ p.image.url }}" />
+									<div class="overlay">
+										<h4>{{ p.name }}</h4>
+									</div>
+								</a>
+								<div class="dialog" id="{{ p.id }}">
+									<div class="holder">
+										<div class="img">
+											<img src="{{ p.image.url }}" />
+										</div>
+										{% if p.attach %}
+										<a href="{{ p.attach.url }}" class="btn-reverse">
+											Download Tasting Note
+										</a>
+										{% endif %}
+										<div class="description">
+										{{ p.description|safe }}
+										</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>				
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+{% endblock %}
+
+{% block js %}
+	<script type="text/javascript">
+	$(function(){
+		$("#tab").tabs();
+	});
+  $(function() {
+    $( ".dialog" ).dialog({
+      dialogClass: "no-close info-dialog",
+      width: 600,
+      height: 700,
+      autoOpen: false,
+      modal: true,
+      show: {
+        effect: "slide",
+        duration: 500
+      },
+      hide: {
+        effect: "clip",
+        duration: 500
+      },
+      open: function(){
+          jQuery('.ui-widget-overlay').bind('click',function(){
+          jQuery('.dialog').dialog('close');
+      })
+      }
+    });
+ 
+    $(".product").click(function() {
+       var id = $(this).attr("data");
+       id = "#"+id
+      $(id).dialog("open");
+    });
+  });
+	</script>
+{% endblock %}

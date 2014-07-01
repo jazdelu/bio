@@ -98,7 +98,8 @@ a:hover{
 	text-decoration: none;
 }
 p{
-	line-height: 26px;
+	font-family: Arial;
+	line-height: 30px;
 	font-size: 16px;
 }
 b{

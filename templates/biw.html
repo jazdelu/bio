@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}BIO IN WINE{% endblock %}
+{% block title %}BIO IN VINE{% endblock %}
 {% block css %}
 <link rel="stylesheet" type="text/css" href="/static/bio/css/jquery.ui.core.min.css">
 <style>
@@ -22,33 +22,19 @@
 			</div>
 			<div id="tab">
 				<ul class="regions">
-					<li><a href="#tab-intro">BIO IN WINE</a></li>
+					<li><a href="#tab-intro">BIO IN VINE</a></li>
 					 {% for r in regions %}
-					<li><a href="#tab-{{ r.id }}">{{ r.name }}</a></li>
+					<li><a href="/brand/bio-in-vine/{{ r.id }}/">{{ r.name }}</a></li>
 					{% endfor %}
 				</ul>
 				<div class="tab-content" id="tab-intro">
 					{{ brand.long_description|safe }}
 				</div>
-				{% for r in regions %}
-				<div class="tab-content" id="tab-{{ r.id }}">
-					{% for w in r.wineries.all %}
-					<div class="col-md-6 col-xs-6 col-sm-6 winery">
-						<a href="/brand/bio-in-wine/{{ w.id }}/">
-							{{ w.name }}
-						</a>
-					</div>
-					{% endfor %}
-				</div>
-				{% endfor %}
-		</div>
+			</div>
 {% endblock %}
 
 {% block js %}
-	<script type="text/javascript">
-	$(function(){
-		$("#tab").tabs();
-	});
+<script type="text/javascript">
   $(function() {
     $( ".dialog" ).dialog({
       dialogClass: "no-close info-dialog",
