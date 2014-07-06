@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-06 13:38+0800\n"
+"POT-Creation-Date: 2014-07-06 17:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: bio/local_settings.py:108
+#: bio/local_settings.py:108 bio/settings.py:110
 msgid "English"
 msgstr ""
 
-#: bio/local_settings.py:109
+#: bio/local_settings.py:109 bio/settings.py:111
 msgid "简体中文"
 msgstr ""
 
@@ -98,11 +98,23 @@ msgstr "最新动态"
 msgid "PRESS REVIEW"
 msgstr "媒体聚焦"
 
-#: templates/brand.html:26 templates/region.html:64
+#: templates/base.html:80
+msgid "LEGAL DISCLAMER"
+msgstr "法律声明"
+
+#: templates/base.html:82
+msgid "SITEMAP"
+msgstr "网站地图"
+
+#: templates/brand.html:21 templates/region.html:64
 msgid "Products"
 msgstr "产品列表"
 
-#: templates/brand.html:45 templates/region.html:82
+#: templates/brand.html:22
+msgid "Brand"
+msgstr "品牌介绍"
+
+#: templates/brand.html:40 templates/region.html:82
 msgid "Download Tasting Note"
 msgstr "下载品尝指南"
 
