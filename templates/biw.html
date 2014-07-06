@@ -14,7 +14,7 @@
 			<div class="brand-info">
 				<div class="title">{{ brand.title|upper }}</div>
 				<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
-				<div class="short"><h4>{{ brand.short_description }}</h4></div>
+				<div class="short"><h4>{{ brand.short_description|default_if_none:' ' }}</h4></div>
 				{% if brand.banner %}
 				<div class="fix-picture">
 					<img src="{{ brand.banner.url }}" width="780px" />

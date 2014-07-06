@@ -31,7 +31,7 @@ class Region(models.Model):
 class Winery(models.Model):
 	region = models.ForeignKey(Region, verbose_name = "Region",related_name = "wineries")
 	name = models.CharField(max_length = 128, verbose_name = "Name")
-	image = models.ImageField(upload_to="winery/", verbose_name ='Image',help_text = "350x400 recommend", null = True, blank = True)
+	image = models.ImageField(upload_to="winery/", verbose_name ='Image',help_text = "300x400 recommend", null = True, blank = True)
 	description = models.TextField(verbose_name = "Description",blank = True, null = True) 
 
 	class Meta:
