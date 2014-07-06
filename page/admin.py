@@ -27,7 +27,7 @@ class ImageAdminInline(admin.TabularInline):
 
 class TranslationPageAdmin(TranslationAdmin):
 	list_display = ("title","s_title","pub_date",)
-	fields = ("title","s_title","banner","url_parameter",)
+	fields = ("title","s_title","banner",)
 	inlines = (ImageAdminInline,TranslationSectionAdminInline,)
 
 	def formfield_for_dbfield(self, db_field, **kwargs):
