@@ -251,6 +251,25 @@ b{
 	padding-left: 100px;
 	padding-right: 100px;
 }
+
+.language{
+	color:#000;
+	position: absolute;
+	top:0px;
+	right:30px;
+	z-index: 2046;
+}
+.language>li>a{
+	color:#000;
+	text-align: center;
+	font-size: 12px;
+}
+.language>li>a:hover{
+	background:transparent;
+	text-decoration: underline;
+}
+
+
 .jumbotron{
 	text-align: center;
 	color: #fff;
@@ -303,7 +322,7 @@ b{
 
 /*-------content right #2---------*/
 .right1{
-	padding: 50px;
+	padding: 70px 50px 50px 50px;
 
 }
 .front1{

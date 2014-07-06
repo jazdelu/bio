@@ -9,6 +9,7 @@
 </style>
 {% endblock %}
 {% block right %}
+		{% load i18n %}
 		<div class="col-md-9 right brand">
 			<div class="brand-info">
 				<div class="title">{{ brand.title|upper }}</div>
@@ -22,7 +23,7 @@
 			</div>
 			<div id="tab">
 				<ul class="regions">
-					<li><a href="#tab-intro">BIO IN VINE</a></li>
+					<li><a href="#tab-intro">{% trans "BIO IN VINE" %}</a></li>
 					 {% for r in regions %}
 					<li><a href="/brand/bio-in-vine/{{ r.id }}/">{{ r.name }}</a></li>
 					{% endfor %}

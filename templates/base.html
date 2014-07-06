@@ -12,6 +12,7 @@
 	<title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+	{% load i18n %}
 	<div class="container">
 		<div class="col-md-3 left">
 			<header>
@@ -21,16 +22,16 @@
 			</header>
 			<nav>
 				<ul class="main-nav">
-					<li><a href="/">HOME</a></li>
-					<li><a href="javascript:void(0)" class = "sub" data=".consumption-nav">ORGANIC CONSUMPTION</a></li>
-					<li><a href="/company-profile/">COMPANY PROFILE</a></li>
-					<li><a href="#" class="sub" data=".products-nav">OUR PRODUCTS</a>
+					<li><a href="/">{% trans "HOME" %}</a></li>
+					<li><a href="javascript:void(0)" class = "sub" data=".consumption-nav">{% trans "ORGANIC CONSUMPTION" %}</a></li>
+					<li><a href="/page/company-profile/">{% trans "COMPANY PROFILE" %}</a></li>
+					<li><a href="#" class="sub" data=".products-nav">{% trans "OUR PRODUCTS" %}</a>
 					</li>
 
-					<li><a href="/missions-&-values/">MISSIONS & VALUES</a></li>
-					<li><a href="#">OUR PARTNERS</a></li>
-					<li><a href="javascript:void(0)" class="sub" data=".news-nav">News</a></li>
-					<li><a href="/contact-us/">CONTACT US</a></li>
+					<li><a href="/page/missions-&-values/">{% trans "MISSIONS & VALUES" %}</a></li>
+					<li><a href="#">{% trans "OUR PARTNERS" %}</a></li>
+					<li><a href="javascript:void(0)" class="sub" data=".news-nav">{% trans "NEWS" %}</a></li>
+					<li><a href="/page/contact-us/">{% trans "CONTACT US" %}</a></li>
 				</ul>
 			</nav>
 			<footer>
@@ -39,53 +40,52 @@
 					<li><a href="#" class="icon-social-facebook"></a></li>
 					<li><a href="#" class="icon-social-instagram"></a></li>
 				</ul>
-				<ul class="footer-nav">
-					<li><a href="/legal-disclamer/">LEGAL DISCLAMER</a></li>
-					<li><a>|</a></li>
-					<li><a href="#">SITEMAP</a></li>
-				</ul>
+
 				<p class="copyright">Copyright &copy; Bio In-Bev 2014 . All Rights Reserved</p>
 			</footer>
 		</div>
 		<div class="sub-nav-holder consumption-nav">
 			<nav>
 				<ul class="sub-nav">
-					<li><a href="/why-organic/">Why Organic</a></li>
-					<li><a href="/5-reasons-to-consume-organic/">5 REASONS TO CONSUME ORGANIC
+					<li><a href="/page/why-organic/">{% trans "Why Organic" %}</a></li>
+					<li><a href="/page/5-reasons-to-consume-organic/">{% trans "5 REASONS TO CONSUME ORGANIC" %}
+	
 </a></li>
-					<li><a href="/understand-organic-labels/">UNDERSTAND ORGANIC LABELS
+					<li><a href="/page/understand-organic-labels/">{% trans "UNDERSTAND ORGANIC LABELS" %}
  </a></li>
-					<li><a href="/certifications-bodies/"> Certifications Bodies </a></li>
+					<li><a href="/page/certifications-bodies/"> {% trans "Certifications Bodies" %} </a></li>
 				</ul>
 			</nav>
 		</div>
 		<div class="sub-nav-holder products-nav">
 			<nav>
 				<ul class="sub-nav">
-					<li><a href="/brand/fair/"> FAIR </a></li>
-					<li><a href="/brand/meneau/"> MENEAU </a></li>
-					<li><a href="/brand/melusine/"> MELUSINE </a></li>
-					<li><a href="/brand/bio-in-vine/"> BIO IN VINE </a></li>
+					<li><a href="/brand/fair/"> {% trans "FAIR" %} </a></li>
+					<li><a href="/brand/meneau/"> {% trans "MENEAU" %} </a></li>
+					<li><a href="/brand/melusine/"> {% trans "MELUSINE" %} </a></li>
+					<li><a href="/brand/bio-in-vine/"> {% trans "BIO IN VINE" %} </a></li>
 				</ul>
 			</nav>
 		</div>
 		<div class="sub-nav-holder news-nav">
 			<nav>
 				<ul class="sub-nav">
-					<li><a href="#"> EVENTS </a></li>
-					<li><a href="#"> PRESS REVIEW </a></li>
+					<li><a href="#"> {% trans "EVENTS" %} </a></li>
+					<li><a href="#"> {% trans "PRESS REVIEW" %} </a></li>
 				</ul>
 			</nav>
 		</div>
 
+        <ul class="nav navbar-nav navbar-right language">
+			<li><a href="/legal-disclamer/">LEGAL DISCLAMER</a></li>
+			<li><a>|</a></li>
+			<li><a href="#">SITEMAP</a></li>
+			<li><a>|</a></li>
+            <li><a href="/setlang/?language=zh-cn&next={{request.path}}">简体中文</a></li>
+            <li><a>|</a></li>
+            <li><a href="/setlang/?language=en&next={{request.path}}">English</a></li>
+        </ul>
 		{% block right %}
-		<div class="col-md-9 right">
-			<div class="jumbotron">
-			  <h2><b>Unique. Urban. Organic. </b></h2>
-			  <p>With a full range of certified Organic products from France, Bio In-Bev offers a drink for every lifestyle.</p>
-			  <a href="/company-profile/" class="btn">LEARN MORE</a>
-			</div>
-		</div>
 		{% endblock %}
 	</div>
 

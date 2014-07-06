@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 """
 Django settings for bio project.
@@ -44,16 +45,29 @@ INSTALLED_APPS = (
     'page',
     'brand',
     'banner',
+    'modeltranslation',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+    'django.core.context_processors.static',
+    'django.core.context_processors.i18n',
+)
+
 
 ROOT_URLCONF = 'bio.urls'
 
@@ -81,8 +95,6 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
@@ -91,6 +103,15 @@ USE_L10N = True
 
 USE_TZ = False
 
+
+ugettext = lambda s: s
+
+LANGUAGES = (
+    ('en', ugettext(u'English')),
+    ('zh-cn', ugettext(u'简体中文')),
+)
+
+LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale/'), )
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

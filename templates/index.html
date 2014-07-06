@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-{% block title %}BIO IN BEV|Unique. Urban. Organic.{% endblock %}
+{% block title %}BIO IN BEV | Unique.  Urban.  Organic.{% endblock %}
 {% block right %}
 		<div class="col-md-9 right">
+            {% load i18n %}
 			<div class="jumbotron">
-			  <h2><b>Unique. Urban. Organic. </b></h2>
+			  <h2><b>{% trans "Unique. Urban. Organic." %} </b></h2>
 			  <div class="line">
 			  </div>
-			  <p>With a full range of certified Organic products from France, Bio In-Bev offers a drink for every lifestyle.</p>
-			  <a href="/company-profile/" class="btn">LEARN MORE</a>
+			  <p>{% trans "With a full range of certified Organic products from France, Bio In-Bev offers a drink for every lifestyle." %}</p>
+			  <a href="/company-profile/" class="btn">{% trans "LEARN MORE" %}</a>
 			</div>
 		</div>
 	</div>
@@ -17,9 +18,11 @@
 	$.vegas('slideshow', {
 	  delay:7000,
 	  backgrounds:[
-	  	{% for b in banners  %}
-	    { src:'{{ b.image.url }}', fade:1000 },
-	    {% endfor %}
+	    { src:'http://bioinbev.qiniudn.com/1.jpg', fade:1000 },
+	    { src:'http://bioinbev.qiniudn.com/2.jpg', fade:1000 },
+	    { src:'http://bioinbev.qiniudn.com/3.jpg', fade:1000 },
+	    { src:'http://bioinbev.qiniudn.com/4.jpg', fade:1000 },
+
 	  ]
 	});
 </script>

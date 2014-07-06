@@ -5,6 +5,12 @@
 {% endblock %}
 {% block right %}
 		<div class="col-md-9 right brand">
+            {% load i18n %}
+            <ul class="nav navbar-nav navbar-right language">
+                <li><a href="/setlang/?language=zh-cn&next={{request.path}}">简体中文</a></li>
+                <li><a>|</a></li>
+                <li><a href="/setlang/?language=en&next={{request.path}}">English</a></li>
+            </ul>
 			<div class="brand-info">
 				<div class="title">{{ brand.title|upper }}</div>
 				<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
@@ -17,8 +23,8 @@
 			</div>
 			<div id="tab">
 				<ul>
-					<li><a href="#tab-1">Products</a></li>
-					<li><a href="#tab-2">Brand</a></li>
+					<li><a href="#tab-1">{% trans "Products" %}</a></li>
+					<li><a href="#tab-2">{% trans "Brand" %</a></li>
 				</ul>
 				<div class="product-info" id="tab-1">
 					{% for p in brand.products.all %}
@@ -36,7 +42,7 @@
 								</div>
 								{% if p.attach %}
 								<a href="{{ p.attach.url }}" class="btn-reverse">
-									Download Tasting Note
+									{% trans "Download Tasting Note" %}
 								</a>
 								{% endif %}
 								<div class="description">

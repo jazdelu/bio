@@ -31,6 +31,12 @@
 {% endblock %}
 {% block right %}
 		<div class="col-md-9 right brand">
+            {% load i18n %}
+            <ul class="nav navbar-nav navbar-right language">
+                <li><a href="/setlang/?language=zh-cn&next={{request.path}}">简体中文</a></li>
+                <li><a>|</a></li>
+                <li><a href="/setlang/?language=en&next={{request.path}}">English</a></li>
+            </ul>
 			<div class="brand-info">
 				<div class="title">{{ region.name|upper }}</div>
 			</div>
@@ -44,7 +50,7 @@
 				<div class="tab-content" id="tab-{{ w.id }}">
 					<div class="section1">
 						<div class="title">
-							Introduction
+							{% trans "Introduction" %}
 						</div>
 						<div class="image">
 							<img src="http://placehold.it/300x400">
@@ -55,7 +61,7 @@
 					</div>	
 					<div class="section1">
 						<div class="title">
-							Products
+							{% trans "Products" %}
 						</div>
 						<div class="content">
 							{% for p in w.products.all %}
@@ -73,7 +79,7 @@
 										</div>
 										{% if p.attach %}
 										<a href="{{ p.attach.url }}" class="btn-reverse">
-											Download Tasting Note
+											{% trans "Download Tasting Note" %}
 										</a>
 										{% endif %}
 										<div class="description">
