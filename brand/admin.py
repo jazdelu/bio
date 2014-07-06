@@ -21,8 +21,6 @@ class ProductAdminForm(ModelForm):
 			'description_en':RedactorWidget(editor_options = { 'lang': 'en'}),
 			'description_zh_cn':RedactorWidget(editor_options = { 'lang': 'en'})
 		}
-	class Media:
-		js = ('/static/bio/js/admin_extra.js',)
 
 class BrandAdmin(TranslationAdmin):
 	list_display = ('title','short_description',)

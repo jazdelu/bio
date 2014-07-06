@@ -46,10 +46,10 @@ class Winery(models.Model):
 class Product(models.Model):
 	name = models.CharField(max_length = 128, verbose_name  ="Product Name")
 	brand = models.ForeignKey(Brand,verbose_name = "Brand",related_name = "products")
+	winery = models.ForeignKey(Winery, related_name = "products", null = True, blank = True)
 	vintage = models.CharField(max_length = 128, verbose_name = 'Vintage', null = True, blank = True)
 	image = models.ImageField(upload_to = "product/", verbose_name = "Product Image",help_text = 'Image height have to be 350px')
 	attach = models.FileField(upload_to = "file/", verbose_name = "Attachment",blank = True, null = True)
-	winery = models.ForeignKey(Winery, related_name = "products", null = True, blank = True)
 	quantity = models.CharField(max_length = 128, verbose_name = 'Quantity', null = True, blank = True)
 	description = models.TextField(verbose_name = "Description",blank = True, null = True)
 	pub_date = models.DateTimeField(auto_now_add = True,verbose_name='Publish Date')
