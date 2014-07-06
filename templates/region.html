@@ -48,7 +48,11 @@
 							{% trans "Introduction" %}
 						</div>
 						<div class="image">
-							<img src="{{ w.image.url }}" width ="300px" height="400px">
+							{% if w.image %}
+								<img src="{{ w.image.url }}" width ="300px" height="400px" />
+							{% else %}
+							    <img src = "http://placehold.it/300x400/" />
+							 {% endif %}
 						</div>
 						<div class="content">
 							{{ w.description|safe }}
