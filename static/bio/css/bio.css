@@ -394,16 +394,19 @@ b{
 	width: auto;
 	text-align: center;
 	float: left;
+	height: 100px;
 	padding: 0px 20px;
 }
-.image>.image>.title{
+
+.images>.image>.title{
 	width: 100%;
 	text-align: center;
 	margin-bottom: 5px;
 	display: block;
 }
-.image>.image>img{
+.images>.image>img{
 	height: 100%;
+	display: block;
 }
 /*------Detail & List----------*/
 .brand{
