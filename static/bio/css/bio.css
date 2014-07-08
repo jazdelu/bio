@@ -23,7 +23,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -36,6 +35,7 @@ body {
 	line-height: 1;
 	width: 100%;
 	height: 100%;
+	background-color: #f2f2f2;
 }
 ol, ul {
 	list-style: none;
@@ -84,6 +84,15 @@ h2{
 h3{
 	font-size: 30px;
 }
+h4{
+	font-size: 26px;
+}
+h5{
+	font-size: 22px;
+}
+h6{
+	font-size: 18px;
+}
 a{
 	-o-transition:color .3s ease-out, background .3s ease-in;
 	-ms-transition:color .3s ease-out, background .3s ease-in;
@@ -91,14 +100,15 @@ a{
 	-webkit-transition:color .3s ease-out, background .3s ease-in;
   /* ...and now override with proper CSS property */
 	transition:color .3s ease-out, background .3s ease-in;
-
 	text-decoration: none;
+	color:#000;
 }
 a:hover{
-	text-decoration: none;
+	text-decoration: underline;
+	color:#000;
 }
 p,span{
-	font-family: Arial;
+	font-family: sans-serif;
 	line-height: 30px;
 	font-size: 14px;
 }
@@ -253,18 +263,20 @@ b{
 }
 
 .language{
-	color:#000;
+	color:#333;
 	position: absolute;
+	padding: 0px 20px;
 	top:0px;
-	right:30px;
+	right:0px;
 	z-index: 2046;
 }
 .language>li>a{
-	color:#000;
+	color:#333;
 	text-align: center;
 	font-size: 12px;
 }
 .language>li>a:hover{
+	color:#000;
 	background:transparent;
 	text-decoration: underline;
 }
@@ -272,7 +284,7 @@ b{
 
 .jumbotron{
 	text-align: center;
-	color: #fff;
+	color: #f2f2f2;
 	background-color: transparent;
 	background: rgba(0,0,0,0.4);
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
@@ -282,12 +294,14 @@ b{
 .jumbotron>h2{
 	margin-bottom: 50px;
 	text-shadow:0 2px 2px rgba(0,0,0,0.4);
+	color:#f2f2f2;
 
 }
 .jumbotron>p{
 	margin-bottom: 50px;
 	text-shadow:  0 2px 2px rgba(0,0,0,0.4);
 	font-weight: bold;
+	color: #f2f2f2;
 }
 .btn{
 	display: block;
@@ -309,7 +323,7 @@ b{
 	width: 200px;
 	text-align: center;
 	margin:20px auto;
-	color:#333!important;
+	color:#f2f2f2!important;
 	border-radius: 6px;
 	border: 1px solid #c0c0c0;
 	padding: 10px 8px;
@@ -332,7 +346,7 @@ b{
 	text-align: center;
 	margin: 0 auto; 
 	letter-spacing: 2px;
-	color:#000;
+	color:#000;	
 	margin-top: 20px;
 	text-shadow: #ccc 0 2px 2px;
 }
@@ -352,7 +366,7 @@ b{
 .section1{
 	color: #000;
 	line-height: 26px;
-	padding: 8px 10px;
+	padding: 20px 10px 0px 10px;
 }
 .section1 > .title{
 	width: 780px;
@@ -377,7 +391,7 @@ b{
 .images>.image{
 	display: block;
 	width: auto;
-	height: 150px;
+	height: 100px;
 	text-align: center;
 	float: left;
 	padding: 0px 20px;
@@ -399,7 +413,6 @@ b{
 }
 .brand-info{
 	padding: 50px 0px 10px 0px;
-	background-color: #fff;
 	color:#000;
 }
 .brand-info> .title{
@@ -473,7 +486,7 @@ b{
 	text-align:center;
 	border:none;
 	color:#c0c0c0;
-	background-color:#fff;
+	background-color: #eee;
 	text-decoration: none;
 }
 #tab>ul>li[aria-selected="true"]>a{
@@ -548,13 +561,17 @@ b{
 }
 /*------------footer----------*/
 footer{
-	margin-top: 20px;
+	position: absolute;
+	margin: 0 auto;
+	margin-top: 5px;
 	width: 100%;
+	bottom: 30px;
+	left: 5px;
 }
 .social{
 	overflow: hidden;
-	text-align: center;
-	padding: 30px 80px;
+	text-align: left;
+	padding: 15px;
 
 }
 .social>li{
@@ -569,10 +586,11 @@ footer{
 	text-align: center;
 	font-size: 20px;
 	border-radius: 30px;
-	color: #c0c0c0;
+	color: #ccc;
 }
 .social>li>a:hover{
 	color: #000;
+	text-decoration: none;
 }
 .footer-nav{
 	overflow: hidden;
@@ -596,4 +614,29 @@ footer{
 	font-size: 12px;
 	text-align: center;
 	color:#c0c0c0;
+}
+
+/*----------Contact---------*/
+.contact{
+	margin: 0 auto;
+	margin-left: 40px;
+	margin-top: 60px;
+}
+.contact>.image{
+	text-align: center;
+}
+.contact>.row1{
+	min-height: 360px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid #333;
+}
+.contact>.row1>h2{
+	margin-top: 120px;
+}
+.contact > .row2{
+	margin-top: 20px;
+	padding-right: 20px;
+}
+.contact>.row2>h5{
+	margin-bottom: 30px;
 }

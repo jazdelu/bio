@@ -38,6 +38,9 @@ def sendmail(request):
 		return HttpResponseRedirect("/")
 
 
+def contact(request):
+	return render_to_response("contact.html",context_instance=RequestContext(request))
+
 def set_language(request):
     next = request.REQUEST.get('next', None)
     if not next:

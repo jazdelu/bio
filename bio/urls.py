@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^brand/', include('brand.urls')),
+    url(r'^contact/', 'bio.views.contact',name="Contact Us"),
     url(r'^$','bio.views.coming', name='coming soon'),
     url(r'^index/$','bio.views.home', name='coming soon'),
     url(r'^page/', include('page.urls')),

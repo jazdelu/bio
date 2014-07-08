@@ -35,12 +35,6 @@
 				</ul>
 			</nav>
 			<footer>
-				<ul class="social">
-					<li><a href="#" class="icon-social-sina-weibo"></a></li>
-					<li><a href="#" class="icon-social-facebook"></a></li>
-					<li><a href="#" class="icon-social-instagram"></a></li>
-				</ul>
-
 				<p class="copyright">Copyright &copy; Bio In-Bev 2014 . All Rights Reserved</p>
 			</footer>
 		</div>
@@ -81,9 +75,12 @@
 			<li><a>|</a></li>
 			<li><a href="#">{% trans "SITEMAP" %}</a></li>
 			<li><a>|</a></li>
-            <li><a href="/setlang/?language=zh-cn&next={{request.path}}">简体中文</a></li>
-            <li><a>|</a></li>
-            <li><a href="/setlang/?language=en&next={{request.path}}">English</a></li>
+            <li>
+            	<a href="/setlang/?language=zh-cn&next={{request.path}}">
+            		<img src="/static/bio/images/china.jpg" title="简体中文" />
+            	</a>
+            </li>
+            <li><a href="/setlang/?language=en&next={{request.path}}"><img src="/static/bio/images/uk.jpg" title="English" /></a></li>
         </ul>
 		{% block right %}
 		{% endblock %}

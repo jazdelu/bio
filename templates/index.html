@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 {% block title %}BIO IN BEV | Unique.  Urban.  Organic.{% endblock %}
+{% block css %}
+<style>
+.language{
+	background: rgba(0,0,0,0.4);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
+}
+</style>
+{% endblock %}
 {% block right %}
 		<div class="col-md-9 right">
             {% load i18n %}
@@ -8,7 +16,7 @@
 			  <div class="line">
 			  </div>
 			  <p>{% trans "With a full range of certified Organic products from France, Bio In-Bev offers a drink for every lifestyle." %}</p>
-			  <a href="/company-profile/" class="btn">{% trans "LEARN MORE" %}</a>
+			  <a href="/page/company-profile/" class="btn">{% trans "LEARN MORE" %}</a>
 			</div>
 		</div>
 	</div>
