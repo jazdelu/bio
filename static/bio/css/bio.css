@@ -583,7 +583,8 @@ footer{
 .social{
 	overflow: hidden;
 	text-align: left;
-	padding: 15px;
+	padding: 10px;
+	margin-left: 45px
 
 }
 .social>li{
