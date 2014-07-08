@@ -3,6 +3,17 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="/static/bio/css/jquery.ui.core.min.css">
 {% endblock %}
+{% block css %}
+<style>
+.body{
+	background-color: #fff;
+
+}
+#tab>ul>li>a{
+	background-color: transparent;
+}
+</style>
+{% endblock %}
 {% block right %}
 		<div class="col-md-9 right brand">
             {% load i18n %}
@@ -27,7 +38,7 @@
 						<a href="javascript:void(0)">
 							<img src="{{ p.image.url }}" />
 							<div class="overlay">
-								<h4>{{ p.name }}</h4>
+								<h5>{{ p.name }}</h5>
 							</div>
 						</a>
 						<div class="dialog" id="{{ p.id }}">
