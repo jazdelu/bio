@@ -1,14 +1,16 @@
 	$(function(){
-		var timeout="";
+		var timeout = "";
+		var sub = ""
 		$(".sub").mouseover(function(){
-			$(".sub-nav-holder").fadeIn();
+			sub = $(this).attr("data");
+			$(sub).show('slide', {direction: 'left'}, 300);
 		}).mouseleave(function(){
-			timeout = setTimeout(function(){$(".sub-nav-holder").fadeOut();},1000);
+			sub = $(this).attr("data");
+			timeout  = setTimeout(function(){$(sub).hide('slide', {direction: 'left'}, 300);},50);
 		});
 		$(".sub-nav-holder").mouseover(function(){
 			clearTimeout(timeout);
 		}).mouseleave(function(){
-			setTimeout(function(){$(".sub-nav-holder").fadeOut();},500);
+			$(".sub-nav-holder").hide('slide', {direction: 'left'}, 300);
 		});
 	});
-

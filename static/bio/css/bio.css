@@ -194,7 +194,7 @@ b{
 	color:#000;
 	text-decoration: none;
 }
-
+/*
 .sub-nav-holder{
 	position: fixed;
 	display: none;
@@ -211,17 +211,6 @@ b{
 	top: 310px;
 	width: 100%;
 }
-.fleche{
-	position: fixed;
-	display: none;
-	left: 350px;
-	top: 340px;
-	width: 9px;
-	height: 16px;
-	z-index: 1024;
-	background: url(/static/bio/images/fleche.png) no-repeat;
-}
-
 .sub-nav>li{
 	padding:0;
 }
@@ -255,6 +244,48 @@ b{
 	width: 200px;
 	line-height: 26px;
 }
+*/
+
+.sub-nav-holder{
+	position: fixed;
+	display: none;
+	background-color: #000;
+	background: rgba(0,0,0,0.85);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4c000000', endColorstr='#4c000000');
+	padding: 10px 10px;
+	width: 500px;
+	left: 380px;
+	top:250px;
+	z-index: 3000;
+}
+.sub-nav{
+	background-color: #fff;
+	top: 310px;
+	width: 100%;
+	height: 100%;
+	padding: 20px 10px;
+}
+.sub-nav>li{
+	padding:0;
+}
+.sub-nav>li>a{
+	color:#c0c0c0;
+	display:block;
+	width: 100%;
+	text-align: center;
+	padding:10px 0px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.sub-nav>li>a:hover{
+	color:#000;
+	text-decoration: none;	
+	text-decoration: underline;
+}
+
+
 /*---------homepage right---------*/
 .right,.right1{
 	margin-left: 350px;
@@ -505,19 +536,36 @@ b{
 	color:#000;
 }
 
-.regions{
-	overflow: hidden;
-	padding-left: 1px!important;
+/*----------bio in vine----------*/
+
+.filter{
+	width: 780px;
+	margin: 0 auto;
+	margin-top: 10px;
 }
-.regions>li>a{
+
+.filter>ul{
+	overflow: hidden;
+	background-color: #e0e0e0;
+}
+.filter>ul>li{
+	float: left;
+}
+.filter>ul>li>a{
+	display: block;
 	font-weight: bold;
-	padding: 15px 25px!important;
+	width: 170px;
+	padding: 15px 0px;
 	font-size: 14px;
 	letter-spacing: 2px;
+	font-size: 12px;
 }
-.regions>li:first-child>a{
-	background-color:#c0c0c0!important;
-	color:#fff!important;
+
+.filter>ul>li>a:hover{
+	background-color:#333;
+	color:white;
+	text-decoration: none;
+
 }
 .winery>a{
 	display: inline-block;

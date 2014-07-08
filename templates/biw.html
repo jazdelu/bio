@@ -13,56 +13,19 @@
 		<div class="col-md-9 right brand">
 			<div class="brand-info">
 				<div class="title">{{ brand.title|upper }}</div>
-				<div class="line">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</div>
-				<div class="short"><h4>{{ brand.short_description|default_if_none:' ' }}</h4></div>
-				{% if brand.banner %}
-				<div class="fix-picture">
-					<img src="{{ brand.banner.url }}" width="780px" />
+				<hr>
+				<div class="section1">
+					<div class="content">
+						{{ brand.long_description|safe }}
+					</div>
 				</div>
-				{% endif %}
 			</div>
-			<div id="tab">
-				<ul class="regions">
-					<li><a href="#tab-intro">{% trans "BIO IN VINE" %}</a></li>
+			<div class="filter">
+				<ul>
+					<li><a href="/brand/bio-in-vine/">{% trans "ALL" %}</a></li>
 					 {% for r in regions %}
-					<li><a href="/brand/bio-in-vine/{{ r.id }}/">{{ r.name }}</a></li>
+					<li><a href="/brand/bio-in-vine/?r={{ r.name }}">{{ r.name }}</a></li>
 					{% endfor %}
 				</ul>
-				<div class="tab-content" id="tab-intro">
-					{{ brand.long_description|safe }}
-				</div>
 			</div>
-{% endblock %}
-
-{% block js %}
-<script type="text/javascript">
-  $(function() {
-    $( ".dialog" ).dialog({
-      dialogClass: "no-close info-dialog",
-      width: 600,
-      height: 700,
-      autoOpen: false,
-      modal: true,
-      show: {
-        effect: "slide",
-        duration: 500
-      },
-      hide: {
-        effect: "clip",
-        duration: 500
-      },
-      open: function(){
-          jQuery('.ui-widget-overlay').bind('click',function(){
-          jQuery('.dialog').dialog('close');
-      })
-      }
-    });
- 
-    $(".product").click(function() {
-       var id = $(this).attr("data");
-       id = "#"+id
-      $(id).dialog("open");
-    });
-  });
-	</script>
 {% endblock %}

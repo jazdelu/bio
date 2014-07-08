@@ -31,7 +31,7 @@
 					<li><a href="/page/missions-and-values/">{% trans "MISSIONS & VALUES" %}</a></li>
 					<li><a href="#">{% trans "OUR PARTNERS" %}</a></li>
 					<li><a href="javascript:void(0)" class="sub" data=".news-nav" style="display:none;">{% trans "NEWS" %}</a></li>
-					<li><a href="/page/contact-us/">{% trans "CONTACT US" %}</a></li>
+					<li><a href="/contact/">{% trans "CONTACT US" %}</a></li>
 				</ul>
 			</nav>
 			<footer>
@@ -102,15 +102,15 @@
 		var sub = ""
 		$(".sub").mouseover(function(){
 			sub = $(this).attr("data");
-			$(sub).show('slide', {direction: 'left'}, 300);
+			$(sub).fadeIn()
 		}).mouseleave(function(){
 			sub = $(this).attr("data");
-			timeout  = setTimeout(function(){$(sub).hide('slide', {direction: 'left'}, 300);},50);
+			timeout  = setTimeout(function(){$(sub).fadeOut();},50);
 		});
 		$(".sub-nav-holder").mouseover(function(){
 			clearTimeout(timeout);
 		}).mouseleave(function(){
-			$(".sub-nav-holder").hide('slide', {direction: 'left'}, 300);
+			$(".sub-nav-holder").fadeOut();
 		});
 	});
 </script>
