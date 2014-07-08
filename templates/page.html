@@ -31,7 +31,7 @@
 				{% for i in page.images.all %}
 				<div class="image">
 					<img src= "{{ i.image.url }}" height = "100%">
-					<p class="title">{{ i.title|default_if_none:" " }}</p>
+					<a class="title" href="{{ i.image.url }}">{{ i.title|default_if_none:" " }}</a>
 				</div>
 				{% endfor %}
 			</div>
