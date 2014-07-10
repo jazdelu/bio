@@ -596,6 +596,8 @@ b{
 .winery>.content>a{
 	text-align: left;
 	margin:0px;
+	padding: 0px;
+	width: 100%;
 }
 .winery>.content>p{
 	line-height: 26px;

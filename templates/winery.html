@@ -79,10 +79,10 @@
 						<li><a href="#tab3">Description</a></li>
 					</ul>
 					<div class="tab-content" id="tab2">
-						{{ winery.description }}
+						{{ winery.description|safe }}
 					</div>
 					<div class="tab-content" id="tab3">
-						{{ winery.text }}
+						{{ winery.text|safe }}
 					</div>
 				</div>
 			</div>	
