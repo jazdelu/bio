@@ -13,7 +13,7 @@ class RegionTranslationOptions(TranslationOptions):
 translator.register(Region,RegionTranslationOptions)
 
 class WineryTranslationOptions(TranslationOptions):
-	fields = ('name','description',)
+	fields = ('name','description','text',)
 
 translator.register(Winery,WineryTranslationOptions)
 

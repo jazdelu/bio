@@ -28,11 +28,28 @@ class Region(models.Model):
 	def __unicode__(self):
 		return self.name
 
+
+class Certification(models.Model):
+	name = models.CharField(max_length = 128, verbose_name = 'Name')
+	image = models.ImageField(upload_to = 'cert/',verbose_name = 'Image', help_text = "60x60 recommend")
+	link = models.URLField(verbose_name = "Link")
+
+	class Meta:
+		verbose_name_plural = "Certification"
+		verbose_name = "Certification"
+
+	def __unicode__(self):
+		return self.name
+
 class Winery(models.Model):
 	region = models.ForeignKey(Region, verbose_name = "Region",related_name = "wineries")
 	name = models.CharField(max_length = 128, verbose_name = "Name")
 	image = models.ImageField(upload_to="winery/", verbose_name ='Image',help_text = "300x400 recommend", null = True, blank = True)
-	description = models.TextField(verbose_name = "Description",blank = True, null = True) 
+	owner = models.CharField(max_length = 128, verbose_name = "Owner", blank = True, null = True)
+	location = models.CharField(max_length = 128,verbose_name = "Location", blank = True, null = True)
+	certification =  models.ManyToManyField(Certification,verbose_name = "Certification", blank = True, null = True)
+	description = models.TextField(verbose_name = "Addition",blank = True, null = True) 
+	text = models.TextField(verbose_name = "Link Text",blank = True, null = True)
 
 	class Meta:
 		verbose_name_plural = "Winery"

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}BIO IN VINE{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="/static/bio/css/jquery.ui.core.min.css">
+<style>
+	.section1{
+		text-align: left;
+	}
+</style>
+{% endblock %}
+{% block right %}
+		{% load i18n %}
+		<div class="col-md-9 right brand">
+			<div class="brand-info">
+				<div class="title">{{ brand.title|upper }}</div>
+				<hr>
+			</div>
+			<div class="filter">
+				<ul>
+					<li><a href="/brand/bio-in-vine/?r=all" data="all">{% trans "ALL" %}</a></li>
+					 {% for r in regions %}
+					<li><a href="/brand/bio-in-vine/?r={{ r.id }}" data="{{ r.id }}">{{ r.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="wineries">
+				{% for w in wineries %}
+				<div class="winery">
+					<div class="image">
+						{% if w.image %}
+							<img src="{{ w.image.url }}" width ="150px" height="200px" />
+						{% else %}
+						    <img src = "http://placehold.it/150x200/" />
+						 {% endif %}
+					</div>
+					<div class="content">
+						<a class="name" href="/brand/bio-in-vine/{{ w.id }}/">{{ w.name }}</a>
+						<p class="owner">{{ w.owner }}</p>
+						<p class="location">{{ w.location }}</p>
+						<div class="certs">
+							{% for c in w.certification.all %}
+							<a href="{{ c.link }}"><img src = "{{ c.image.url }}" title="{{ c.name }}" width = "45px;"/></a>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	var data = "{{ key }}";
+	var s = ".filter>ul>li>a[data="+data+"]";
+	$(s).addClass("selected");
+</script>
+{% endblock %}

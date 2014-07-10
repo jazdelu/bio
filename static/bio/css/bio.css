@@ -567,6 +567,42 @@ b{
 	text-decoration: none;
 
 }
+.filter>ul>li>a.selected{
+	background-color:#333;
+	color:white;
+	text-decoration: none;
+}
+
+.wineries{
+	width: 780px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.winery{
+	overflow: hidden;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom:1px #ccc solid;
+}
+.winery>div{
+	float: left;
+}
+.winery>.image{
+	margin-right: 30px
+}
+.winery>.content>*{
+	text-align: left;
+}
+.winery>.content>p{
+	line-height: 26px;
+	color:#ccc;
+}
+.winery>.content>.certs{
+	margin-top: 75px;
+}
+.winery>.content>.certs>a{
+	margin-right: 10px;
+}
 .winery>a{
 	display: inline-block;
 	padding:20px 14px;

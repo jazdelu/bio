@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.forms import ModelForm
 from suit_redactor.widgets import RedactorWidget
-from brand.models import Brand, Product, Region, Winery
+from brand.models import Brand, Product, Region, Winery, Certification
 from modeltranslation.admin import TranslationAdmin, TranslationStackedInline
 # Register your models here.
 
@@ -38,12 +38,15 @@ class WineryAdminForm(ModelForm):
 	class Meta:
 		widgets = {
 			'description_en':RedactorWidget(editor_options = { 'lang': 'en'}),
-			'description_zh_cn':RedactorWidget(editor_options = { 'lang': 'en'})
+			'description_zh_cn':RedactorWidget(editor_options = { 'lang': 'en'}),
+			'text_en':RedactorWidget(editor_options = { 'lang': 'en'}),
+			'text_zh_cn':RedactorWidget(editor_options = { 'lang': 'en'}),
 		}
 
 class WineryAdminInline(TranslationStackedInline):
 	model = Winery
 	form = WineryAdminForm
+	filter_horizontal = ('certification',)
 
 class RegionAdmin(TranslationAdmin):
 	inlines = (WineryAdminInline,)
@@ -65,3 +68,9 @@ class ProductAdmin(TranslationAdmin):
 		return field
 
 admin.site.register(Product,ProductAdmin)
+
+
+class CertAdmin(admin.ModelAdmin):
+	list_display = ('name','link',)
+
+admin.site.register(Certification,CertAdmin)
