@@ -8,7 +8,7 @@ class Partner(models.Model):
 
 	class Meta:
 		verbose_name_plural = "Partner"
-		verbose_name = "Partern"
+		verbose_name = "Partner"
 
 	def __unicode__(self):
 		return self.name
