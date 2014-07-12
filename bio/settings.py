@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'page',
     'brand',
     'banner',
+    'partner',
     'modeltranslation',
 )
 
@@ -142,6 +143,7 @@ SUIT_CONFIG = {
         {'app':'banner','label':'Banner','icon':'icon-leaf'},
         {'app':'brand','label':'Brand','icon':'icon-gift'},
         {'app':'page','label':'Page','icon':'icon-bookmark'},
+        {'app':'partner','label':'Partner','icon':'icon-user'},
         {'label': 'Homepage', 'icon':'icon-leaf', 'url': '/'},
     ),
     # 'SEARCH_URL': '/admin/auth/user/',

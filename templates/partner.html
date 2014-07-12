@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Our Partners{% endblock %}
+{% block right %}
+		<div class="col-md-9 right1">
+			<div class="section1">
+				<div class="title">
+					Our Partners
+				</div>
+				<div class="content" style="margin-top:30px;">
+					{% for p in partners %}
+					<div class="partner col-md-4 col-xs-4 col-sm-4">
+						<a href="{{ p.link }}"><img src="{{ p.image.url }}" title="{{ p.name }}" width="250px;"></a>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+{% endblock %}
