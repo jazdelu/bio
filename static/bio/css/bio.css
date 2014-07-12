@@ -108,12 +108,15 @@ a:hover{
 	color:#000;
 }
 p,span{
-	font-family: sans-serif;
+	font-family: Helvetica,sans-serif;
 	line-height: 30px;
 	font-size: 14px;
 }
 b{
-	font-weight: bold;
+	font-weight: 700;
+}
+i{
+	font-style: italic;
 }
 /*--------structure----------*/
 .container{
