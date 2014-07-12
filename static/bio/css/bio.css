@@ -107,9 +107,9 @@ a:hover{
 	text-decoration: underline;
 	color:#000;
 }
-p,span{
+p,span,b,i{
 	font-family: Helvetica,sans-serif;
-	line-height: 30px;
+	line-height: 26px;
 	font-size: 14px;
 }
 b{
