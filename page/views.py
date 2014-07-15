@@ -6,7 +6,6 @@ from page.models import Page
 def get_page_by_title(request, title):
 	page = ''
 	title = title.replace('-',' ')
-	title = title.replace('and','&')
 	print title
 	page = Page.objects.get(title_en = title)
 
