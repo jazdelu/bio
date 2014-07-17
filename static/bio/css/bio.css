@@ -417,6 +417,9 @@ i{
 	margin: 0 auto;
 	width: 780px;
 }
+.section1>.content>ul{
+	list-style: circle;
+}
 .images{
 	width: 580px;
 	margin: 0 auto;
