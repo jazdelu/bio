@@ -34,7 +34,7 @@
 					{% for p in brand.products.all %}
 					<div class="col-md-6 col-xs-6 col-sm-6 product" data="{{ p.id }}">
 						<a href="javascript:void(0)">
-							<img src="{{ p.image.url }}" />
+							<img src="{{ p.image.url }}" height="350px"/>
 							<div class="overlay">
 								<h5>{{ p.name }}</h5>
 							</div>
@@ -50,7 +50,7 @@
 								</a>
 								{% endif %}
 								<div class="description">
-								{{ p.description|safe }}
+								{{ p.description|default_if_none:" "|safe }}
 								</div>
 							</div>
 						</div>
@@ -58,7 +58,7 @@
 					{% endfor %}
 				</div>
 				<div class="long" id="tab-2">
-					{{ brand.long_description|safe }}
+					{{ brand.long_description|default_if_none:" "|safe }}
 				</div>
 			</div>
 		</div>
