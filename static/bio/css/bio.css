@@ -108,7 +108,7 @@ a:hover{
 	color:#000;
 }
 p,span,b,i,blockquote{
-	font-family: Helvetica,sans-serif;
+	font-family: 'Helvetica Neue',sans-serif;
 	line-height: 26px;
 	font-weight: lighter;
 }
