@@ -110,7 +110,7 @@
 								</a>
 								{% endif %}
 								<div class="description">
-								{{ p.description|safe }}
+								{{ p.description|safe|default_if_none:" " }}
 								</div>
 							</div>
 						</div>
