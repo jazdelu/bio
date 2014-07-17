@@ -417,8 +417,8 @@ i{
 	margin: 0 auto;
 	width: 780px;
 }
-.section1>.content>ul{
-	list-style: circle;
+.section1>.content ul{
+	list-style: disc;
 }
 .images{
 	width: 580px;
