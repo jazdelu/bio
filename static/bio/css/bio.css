@@ -110,7 +110,6 @@ a:hover{
 p,span,b,i,blockquote{
 	font-family: 'Helvetica Neue',sans-serif;
 	line-height: 26px;
-	font-weight: lighter;
 }
 b{
 	font-weight: 500;
