@@ -742,13 +742,19 @@ footer{
 	padding-bottom: 10px;
 	border-bottom: 3px solid #333;
 }
-.contact>.row1>h2{
+.contact>.row1 h2{
 	margin-top: 120px;
 }
 .contact > .row2{
 	margin-top: 20px;
 	padding-right: 20px;
 }
-.contact>.row2>h5{
+.contact > .row2>p{
+	padding-left:15px;
+	padding-right: 15px;
+}
+
+.contact>.row2 h5{
 	margin-bottom: 30px;
+	text-align: center;
 }
