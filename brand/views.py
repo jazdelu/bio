@@ -7,7 +7,6 @@ from brand.models import Brand, Product,Region,Winery
 def get_brand_by_title(request, title):
 	brand = ''
 	title = title.replace("-",' ')
-	print title
 	brand = Brand.objects.get(title_en = title)
 	if brand.title.lower() != 'bio in vine':
 		return render_to_response("brand.html",{ "brand":brand },context_instance=RequestContext(request))
@@ -23,6 +22,8 @@ def get_brand_by_title(request, title):
 			return render_to_response("wineries.html", { "brand":brand, "regions":regions, "wineries":wineries,"key":key }, context_instance = RequestContext(request))
 		else:
 			return render_to_response("biw.html", { "brand":brand, "regions":regions,}, context_instance = RequestContext(request))
+
+
 
 
 
