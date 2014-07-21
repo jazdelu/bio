@@ -26,7 +26,9 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.bio-inbev.com'
+]
 
 SITE_ID=1
 
