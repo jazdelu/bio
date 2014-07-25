@@ -102,15 +102,15 @@
 		var sub = ""
 		$(".sub").mouseover(function(){
 			sub = $(this).attr("data");
-			$(sub).fadeIn()
+			$(sub).fadeIn(250)
 		}).mouseleave(function(){
 			sub = $(this).attr("data");
-			timeout  = setTimeout(function(){$(sub).fadeOut();},50);
+			timeout  = setTimeout(function(){$(sub).fadeOut(250);},1);
 		});
 		$(".sub-nav-holder").mouseover(function(){
 			clearTimeout(timeout);
 		}).mouseleave(function(){
-			$(".sub-nav-holder").fadeOut();
+			$(".sub-nav-holder").fadeOut(250);
 		});
 	});
 </script>
