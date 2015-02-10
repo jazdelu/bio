@@ -112,7 +112,7 @@
 								<div class="description">
 								{{ p.description|default_if_none:" "|safe }}
 								</div>
-								<div class="certs" style="margin-top:70px;">
+								<div class="certs" style="margin-top:15px;">
 									{% for c in p.certification.all %}
 									<a href="{{ c.link }}"><img src = "{{ c.image.url }}" title="{{ c.name }}" width = "45px;"/></a>
 									{% endfor %}
