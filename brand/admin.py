@@ -61,6 +61,7 @@ admin.site.register(Region, RegionAdmin)
 
 class ProductAdmin(TranslationAdmin):
 	list_display = ('name','brand','pub_date')
+	filter_horizontal = ('certification',)
 	form = ProductAdminForm
 	def formfield_for_dbfield(self, db_field, **kwargs):
 		field = super(ProductAdmin, self).formfield_for_dbfield(db_field, **kwargs)
